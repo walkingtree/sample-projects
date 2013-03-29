@@ -1,0 +1,6 @@
+#Fri, 01 Mar 2013 09:34:43 +0530
+app.name=senchaTouchExample
+app.framework=touch
+app.classpath=${app.dir}/app.js,${app.dir}/app
+
+app.cmd.version=3.0.2.288
