@@ -1,4 +1,4 @@
 sample-projects
 ===============
 
-Contains sample projects for download and referrence
+Contains sample projects for download and reference
