@@ -1,0 +1,18 @@
+.users-alt .x-grid-row .x-grid-cell { 
+     background-color:#E0FFFF; 
+    color: Black;
+} 
+ 
+.users-alt .x-grid-row-alt .x-grid-cell { 
+    background-color: #FAFAD2; 
+    color: Black;
+}
+.departments-alt .x-grid-row .x-grid-cell { 
+     background-color: Azure; 
+     color:Black;
+} 
+ 
+.departments-alt .x-grid-row-alt .x-grid-cell { 
+    background-color: Beige ; 
+    color: Black; 
+}
