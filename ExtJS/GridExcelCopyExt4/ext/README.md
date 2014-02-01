@@ -1,1 +1,1 @@
-Due to copyright issues, the ext folder has not been included in this project and sencha cdn URL has been used in the index.html file. If you download this project then you can also try extracting the ExtJS framework in a folder named ext and change the index.html file.
+Due to copyright issues, the ExtJS SDK has not been included in this project and SDN URL has been used in the index.html file. If you download this project then you can also try extracting the ExtJS SDK in the dummy ext folder and change the index.html file to include the required CSS and JS files.
