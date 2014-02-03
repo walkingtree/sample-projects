@@ -1,0 +1,1 @@
+Due to copyright issues, the Touch SDK has not been included in this project and WalkingTree SDN URL has been used in the index.html file. If you download this project then you can try extracting the Touch SDK in the dummy touch folder and change the index.html file to include the required files.
