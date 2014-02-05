@@ -1,0 +1,142 @@
+.sidebarToggle {
+  display: inline-block;
+  background: url(../images/sidebarToggle.png);
+}
+
+.next {
+  display: inline-block;
+  background: url(../images/toolbarButton-pageDown.png);
+}
+
+.prev {
+  display: inline-block;
+  background: url(../images/toolbarButton-pageUp.png);
+}
+
+.x-btn-icon-el.search {
+  display: inline-block;
+  background: url(../images/toolbarButton-search.png);
+}
+
+.zoomout {
+  display: inline-block;
+  background: url(../images/toolbarButton-zoomOut.png);
+}
+
+.zoomin {
+  display: inline-block;
+  background: url(../images/toolbarButton-zoomIn.png);
+}
+
+.presentationmode{
+  display: inline-block;
+  background: url(../images/toolbarButton-presentationMode.png);
+}
+
+.openfile{
+  display: inline-block;
+  background: url(../images/toolbarButton-openFile.png);
+}
+
+.findprev{
+  display: inline-block;
+  background: url(../images/findbarButton-previous.png);
+}
+
+.findnext{
+  display: inline-block;
+  background: url(../images/findbarButton-next.png);
+}
+
+.searchhide {
+
+visibility : hidden;
+position:fixed;
+}
+
+.serachbar-body.x-menu-body{
+  background:none !important;
+}
+
+
+.pointer {
+width: 0;
+height: 0;
+border-left: 10px solid transparent;
+border-right: 10px solid transparent;
+border-bottom: 8px solid #99bce8;
+margin-left: 3px;
+}
+
+.rightalign{
+	text-align:right;
+	font-weight:normal;
+}
+
+.errorpanel .x-panel-body{
+	border-top-style: solid;
+	border-top-width: 1px;
+}
+
+.panelstyles {
+	font-family : arial;
+	background-color: red;
+	color:white !important;
+	font-weight : bold;
+	padding:10px !important;
+}
+
+.margin {
+	margin-left : 5%;
+/* 	margin-right : 10%; */
+	margin-top:1%;
+}
+.showborder{
+    background-color:#7695bd;
+}
+
+.showborders{
+    background-color:#6186b3;
+}
+.pdf-page-container {
+	margin :-1px auto 1px auto;
+	border: 1px solid;
+	background-color: white;
+}
+
+.thumbnailmargin{
+	margin-bottom:15px !important;
+}
+
+.editable{
+  display: inline-block;
+  background: url(../images/ediablefield.png);
+}
+
+.preview-area {
+	margin:1px auto 10px auto;
+	text-align: center;
+	position:relative;
+}
+
+.thumbnail-area {
+	margin:7px;
+	text-align: center;
+	font-size: 14px;
+}
+
+.x-panel-body-default:-webkit-full-screen{
+	width:100% !important;
+	height:100% !important;
+	top:0px !important;
+
+}
+
+
+
+.pdf-text-layer .highlight {
+margin: -1px;
+background: rgba(180, 0, 170, 0.2);
+padding: 1px;
+border-radius: 4px;
+}

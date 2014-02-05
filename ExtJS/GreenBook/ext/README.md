@@ -1,0 +1,1 @@
+Due to copyright issues, the ExtJS SDK has not been included in this project and Sencha CDN URL has been used in the index.html file. If you download this project then you can try extracting the ExtJS SDK in the dummy ext folder and change the index.html file to include the required CSS and JS files.

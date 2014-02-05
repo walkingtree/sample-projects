@@ -1,0 +1,1 @@
+var PAGES={PDF_SET:6,THUMB_SET:10,BUFFER:6,THUMB_BUFFER:6,previousPageNum:"",CountPages:[],shiftKey:!1,splitPages:[],remainingTabPages:[],controlKey:!1};

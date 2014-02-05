@@ -1,0 +1,8 @@
+
+.x-tree-icon-leaf {
+background-image: url(tree-images/book-closed.png);
+}
+.x-grid-row-selected .x-tree-icon-leaf{
+background-image: url(tree-images/book-reading.png);
+}
+

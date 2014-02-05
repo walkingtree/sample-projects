@@ -1,0 +1,3 @@
+Ext.define('Setu.Log', {
+	
+});
