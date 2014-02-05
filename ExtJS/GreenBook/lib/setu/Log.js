@@ -1,3 +1,0 @@
-Ext.define('Setu.Log', {
-	
-});
