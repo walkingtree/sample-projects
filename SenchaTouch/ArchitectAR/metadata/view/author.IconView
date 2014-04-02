@@ -1,0 +1,298 @@
+{
+    "type": "Ext.dataview.DataView",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "centered": null,
+        "designer|userAlias": "authorIconView",
+        "designer|userClassName": "author.IconView",
+        "inline": true,
+        "itemId": "mydataview1",
+        "margin": null,
+        "modal": null,
+        "requires": [
+            "AR.util.Utility"
+        ],
+        "store": "authorStore",
+        "style": "margin: 0 2% 0 2%;"
+    },
+    "configAlternates": {
+        "inline": "boolean"
+    },
+    "designerId": "d385dbd2-a0c0-4db2-9886-dd1ae47b6f5f",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "itemTpl",
+                "implHandler": [
+                    "<div class=\"tbox\" style=\"height:{[this.caldim(xcount,\"h\")]}px;width:{[this.caldim(xcount,\"w\")]}px;background:{% if(xindex === 0) { ty=xindex-1; } if ( xindex <= this.colorslen()) { ty++;  } else { if( ty >= this.colorslen() ) { ty=0;  } else{ ty++; }   }  %}{[this.colors(ty)]}\" > <div class=\"digit-div\" > <div class=\"author_digit\" style=\"font-size:{[this.calfont(xcount)]}px\">{posts}</div> </div> <div class=\"tboxInner\" style=\"\">",
+                    "\t               ",
+                    "\t\t   \t\t   <div class=\"circular-image\" style=\"background:url(http://www.gravatar.com/avatar/{email}/?s=40) no-repeat;\"><div class=\"titleBox1\" style=\"font-size:{[this.calfonttext(xcount)]}px\">{name}</div></div>\t\t",
+                    "\t\t\t\t\t",
+                    "\t\t\t\t</div>",
+                    "\t\t\t   </div>"
+                ]
+            },
+            "designerId": "76945a4c-6211-4d1c-941e-6cf87e0defbd",
+            "cn": [
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "col"
+                        ],
+                        "fn": "colors",
+                        "implHandler": [
+                            "",
+                            "    return AR.util.Utility.colors[col];",
+                            ""
+                        ]
+                    },
+                    "designerId": "8c53e523-2dc9-4cdf-8b65-dafdcaf4b558"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "colorslen",
+                        "implHandler": [
+                            "return AR.util.Utility.colors.length-1;",
+                            ""
+                        ]
+                    },
+                    "designerId": "13235c44-bf29-484b-aa7b-b7dfea66dbb2"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "c"
+                        ],
+                        "fn": "calwidth",
+                        "implHandler": [
+                            "",
+                            "var mintile = 160;",
+                            "var width = Ext.getDoc().dom.clientWidth;",
+                            "",
+                            "if(  width < 360)",
+                            "{",
+                            "\t\tvar mintile = 100;",
+                            "",
+                            "\t\t\t\t\t\t\t\t}",
+                            "",
+                            "margin = width * 0.02 * 2;",
+                            "",
+                            "                            var finalwidth = width - margin;",
+                            "",
+                            "                            var pertile  = Math.floor(finalwidth / mintile) ;",
+                            "",
+                            "                             pertile = pertile -1;",
+                            "",
+                            "                           var finalwidth = finalwidth - (5 * pertile);",
+                            "",
+                            "                           var tilewidth= finalwidth / pertile;",
+                            "",
+                            "",
+                            "",
+                            "                           return tilewidth;"
+                        ]
+                    },
+                    "designerId": "75ad1cb3-9017-4cfa-8026-4882f88e7d7d"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "integer",
+                            "dim"
+                        ],
+                        "fn": "caldim",
+                        "implHandler": [
+                            "   while (this.isPrime(integer)){",
+                            "                               integer++;",
+                            "                            }",
+                            "                                                  var factor1=  this.getFactors(integer);",
+                            "                                                  var factor2=  this.getSecondfactor(integer,factor1);",
+                            "",
+                            "                                                   var width =   Ext.getDoc().dom.clientWidth  - 20  ;",
+                            "",
+                            "                                                   margin = width * 0.02 * 2;",
+                            "                                                   var width = width- margin;",
+                            "                                                   tabbarheight =Ext.ComponentQuery.query('artabpanel')[0].getTabBar().element.dom.clientHeight;",
+                            "                                                   var height =  Ext.getDoc().dom.clientHeight - ( 2 * tabbarheight ) - 10;",
+                            "",
+                            "",
+                            "",
+                            "                                       if(width >= height){",
+                            "",
+                            "                                          var tilewidth = width  / Math.max(factor1,factor2);",
+                            "                                          var tileheight = height/ Math.min(factor1,factor2);",
+                            "                                         }else{",
+                            "",
+                            "                                           var tilewidth = width / Math.min(factor1,factor2);",
+                            "                                           var  tileheight =  height  / Math.max(factor1,factor2);",
+                            "",
+                            "                                         }",
+                            "                                                 //~ console.log(width+\"--\"+height);",
+                            "                                                 //~ console.log(factor1+\"--\"+factor2);",
+                            "                                                 //~ console.log(tilewidth+\"--\"+tileheight);",
+                            "",
+                            "                                                 if(dim==\"h\"){",
+                            "                                                 return Math.floor(tileheight);",
+                            "                                                 }else{",
+                            "                                                 return Math.floor(tilewidth);",
+                            "                                                 }"
+                        ]
+                    },
+                    "designerId": "8dbf16a4-2b56-4774-a172-01c24be62f04"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "integer"
+                        ],
+                        "fn": "getFactors",
+                        "implHandler": [
+                            " var factors = [],",
+                            "  quotient = 0;",
+                            "",
+                            "  for(var i = 1; i <= integer; i++){",
+                            "    quotient = integer/i;",
+                            "",
+                            "    if(quotient === Math.floor(quotient)){",
+                            "      factors.push(i);",
+                            "    }",
+                            "  }",
+                            " var firstfactorindex= Math.floor(factors.length/2);",
+                            " var firstfactor=factors[firstfactorindex];",
+                            "  return firstfactor;"
+                        ]
+                    },
+                    "designerId": "239251b1-d7c1-4f83-b281-7a9ab86c134c"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "number",
+                            "ffc"
+                        ],
+                        "fn": "getSecondfactor",
+                        "implHandler": [
+                            "  return number/ffc;"
+                        ]
+                    },
+                    "designerId": "3f2713e6-cd5b-4ecc-b18e-b05217cd64c9"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "numb"
+                        ],
+                        "fn": "isPrime",
+                        "implHandler": [
+                            " for(var i=2; i<= Math.sqrt(numb); i++){",
+                            " if(numb%i === 0){",
+                            "   return false;",
+                            " }",
+                            "  }",
+                            "  return true;"
+                        ]
+                    },
+                    "designerId": "319d6f89-3462-4eb8-b2d6-ddeb7e50d5b1"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "count"
+                        ],
+                        "fn": "calfont",
+                        "implHandler": [
+                            "      var h=this.caldim(count,\"h\");",
+                            "font= h/2;",
+                            "if(font >= 120){",
+                            "\t\t\tfont =120;",
+                            "}",
+                            " return font;"
+                        ]
+                    },
+                    "designerId": "6c5da44d-e882-4156-a0e2-4264fc2f99f5"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "count"
+                        ],
+                        "fn": "calfonttext",
+                        "implHandler": [
+                            "   var h=this.caldim(count,\"h\");",
+                            "font= h/8;",
+                            "if(font >= 20){",
+                            "\t\t\tfont = 20;",
+                            "}  ",
+                            " return  font;"
+                        ]
+                    },
+                    "designerId": "abfb6f2d-643c-4cd0-829f-c1e636494ae0"
+                }
+            ]
+        }
+    ]
+}

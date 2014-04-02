@@ -1,0 +1,27 @@
+{
+
+	"language": [
+			{ "langCode": "en","langName" : "English"}, 
+			{ "langCode": "hi","langName" : "Hindi"}
+                        
+		    ],
+       "theme":[      
+                  { "themeCode"	: "app",		"themeName" : "Deafult"		}, 	
+		  { "themeCode"	: "bb10",		"themeName" : "Blackberry"	},
+		  { "themeCode"	: "cupertino",		"themeName" : "Cupertino"	},
+                  { "themeCode"	: "cupertino-classic",	"themeName" : "CupertinoClassic"},
+                  { "themeCode"	: "wp",		  "themeName" : "Windows"		}, 	
+                  { "themeCode"	: "mountainview",	"themeName" : "MountainView"	},
+		  { "themeCode"	: "tizen",		"themeName" : "Tizen"		},
+                  
+                   { "themeCode"	: "indiansummer",		"themeName" : "Indian Summer"}
+
+                ],
+      "defaultTabView": [
+			{ "tabCode": "0","tabName" : "Articles List"}, 
+                        { "tabCode": "1","tabName" : "Categories View"}, 	
+			{ "tabCode": "2","tabName" : "Authors View"},
+                        { "tabCode": "3","tabName" : "Saved Articles"}
+                        
+		    ],
+}

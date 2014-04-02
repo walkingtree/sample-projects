@@ -1,0 +1,231 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "settingsform",
+        "designer|userClassName": "Setting",
+        "itemId": "myformpanel",
+        "menubtn": "false",
+        "requires": [
+            "Ext.form.FieldSet",
+            "Ext.form.Select",
+            "Ext.Label",
+            "Ext.form.Toggle"
+        ]
+    },
+    "designerId": "a4cd1999-5623-4e2f-bc48-733357a3efaf",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "menubtn",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Application Settings"
+            },
+            "designerId": "8df05581-4822-48c0-9200-06cce3cf3a05",
+            "cn": [
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "langName",
+                        "id": "languagefield",
+                        "itemId": "languagefield",
+                        "label": "Launguage",
+                        "labelWidth": "50%",
+                        "valueField": "langCode"
+                    },
+                    "designerId": "fdf82e18-62b5-4361-a068-c0df6c67b3ad"
+                },
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "themeName",
+                        "id": "themefield",
+                        "label": "Theme",
+                        "labelWidth": "50%",
+                        "valueField": "themeCode"
+                    },
+                    "designerId": "29222f65-14be-45b8-b449-cd85c465d218"
+                },
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "displayField": "tabName",
+                        "id": "tabfield",
+                        "label": "Default tab",
+                        "labelWidth": "50%",
+                        "valueField": "tabCode"
+                    },
+                    "designerId": "0385e541-563e-4795-a361-d69d5cd58e61"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Article Settings"
+            },
+            "designerId": "df0cc71b-2044-40f0-a624-a7fca0358ec8",
+            "cn": [
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "html": "Category View",
+                        "id": "togglelabel"
+                    },
+                    "designerId": "1f1bef12-6865-43f9-a956-9598ec001df5"
+                },
+                {
+                    "type": "Ext.field.Toggle",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "contentEl": "togglelabel",
+                        "id": "togglecom",
+                        "itemId": "mytogglefield",
+                        "label": "Category View"
+                    },
+                    "designerId": "ac2b8617-c953-407e-bfb1-ea2766701a37",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMytogglefieldChange",
+                                "implHandler": [
+                                    "",
+                                    "",
+                                    "",
+                                    "if(newValue===0){",
+                                    "",
+                                    "Ext.getCmp('togglelabel').setHtml(AR.locale.Labels.FIELD_ICON_VIEW_LABEL);",
+                                    "    ",
+                                    "}else{",
+                                    "   ",
+                                    "Ext.getCmp('togglelabel').setHtml(AR.locale.Labels.FIELD_LIST_VIEW_LABEL);    ",
+                                    "    ",
+                                    "}"
+                                ],
+                                "name": "change"
+                            },
+                            "designerId": "5b5edccf-839a-445a-8857-596700fb3a92"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "html": "10",
+                        "id": "sliderval"
+                    },
+                    "designerId": "17246e6f-4db8-428e-b37d-5eecec68a119"
+                },
+                {
+                    "type": "Ext.field.Slider",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "contentEl": "sliderval",
+                        "id": "slidercom",
+                        "itemId": "mysliderfield",
+                        "label": "No Of Records Per Page",
+                        "maxValue": 50,
+                        "value": [
+                            10
+                        ]
+                    },
+                    "designerId": "0ae92064-5b80-4982-9eca-fd9bc1d82aca",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMysliderfieldChange",
+                                "implHandler": [
+                                    "",
+                                    "Ext.getCmp('sliderval').setHtml(newValue); "
+                                ],
+                                "name": "change"
+                            },
+                            "designerId": "46b1396a-c552-4b1b-9343-babb45fcedfc"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "settingssavebtn",
+                "margin": "0% 1% 0% 1%",
+                "text": "Apply Settings"
+            },
+            "designerId": "abcda827-6b61-4138-bfe6-2ef74137f0c4"
+        }
+    ]
+}

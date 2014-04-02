@@ -1,0 +1,87 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Author"
+    },
+    "designerId": "e6fe1a5d-16d8-4c30-9e09-a971666c5163",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "appnav",
+                "selector": "arnavigation"
+            },
+            "designerId": "2778fc03-d29e-4795-9b02-2c3d1996eb4d"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "articleList",
+                "selector": "articlelist"
+            },
+            "designerId": "bd09bef2-28f6-43ba-92ab-afdde7dcd0d9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "authorview",
+                "designer|targetType": "author.IconView",
+                "fn": "ShowArticleOfAuthor",
+                "implHandler": [
+                    "",
+                    "/*",
+                    "Authortitle= record.getData().first_name;",
+                    "",
+                    "appNav=this.getAppnav();",
+                    "",
+                    "Articls_auth=Ext.create('AR.store.ArticleStore',{autoload:false});",
+                    "",
+                    "",
+                    "Articls_auth.setParams({'author':record.getData().id});",
+                    "Articls_auth.load();",
+                    "var Articles= Ext.create('AR.view.article.List',{store:Articls_auth,title:Authortitle,localArticleView : true});",
+                    "this.getAppnav().push(Articles);",
+                    "",
+                    "*/",
+                    "",
+                    "  this.getApplication().getController('Main').showArticlesOfAuthor(record.getData().id);"
+                ],
+                "name": "itemtap"
+            },
+            "designerId": "11e0c6c9-6ad7-4128-8b09-5462a3480c04"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "authorview",
+                "selector": "authorIconView"
+            },
+            "designerId": "7bfdf358-670d-435d-be9c-361f057458fb"
+        }
+    ]
+}

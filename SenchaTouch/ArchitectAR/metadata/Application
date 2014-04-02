@@ -1,0 +1,48 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "Main",
+            "Article",
+            "Category",
+            "Author"
+        ],
+        "models": [
+            "Article",
+            "ArticleLocal",
+            "Category",
+            "Author",
+            "Setting",
+            "Categorytree"
+        ],
+        "name": "AR",
+        "requires": [
+            "AR.locale.ChooseLabels"
+        ],
+        "stores": [
+            "ArticleStore",
+            "Category",
+            "Author",
+            "Setting",
+            "CategoryTreeStore",
+            "LocalArticle"
+        ],
+        "views": [
+            "Tabpanel",
+            "article.List",
+            "category.IconView",
+            "author.IconView",
+            "article.Detail",
+            "OverFlowMenu",
+            "Setting",
+            "category.TreeView",
+            "About"
+        ]
+    },
+    "designerId": "application"
+}

@@ -1,0 +1,64 @@
+{
+    "type": "Ext.data.TreeStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": [
+            "{",
+            "    ",
+            "    autoLoad:false   ",
+            "    ",
+            "}"
+        ],
+        "defaultRootProperty": "categories",
+        "designer|userClassName": "CategoryTreeStore",
+        "model": "Categorytree",
+        "root": [
+            "{",
+            "    expanded:true",
+            "}"
+        ],
+        "rootVisible": true,
+        "storeId": "cattreestore"
+    },
+    "configAlternates": {
+        "autoLoad": "object"
+    },
+    "designerId": "b33f2666-9b5e-45bc-b515-27a10e47ac27",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "    ",
+                    "    read:AR.util.Utility.GetTreeCategories",
+                    "}"
+                ]
+            },
+            "designerId": "f8275139-0e92-4eef-aaac-c1da36376785",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "categories"
+                    },
+                    "designerId": "a2f7c03e-82ad-4657-acc4-4adbe63aabeb"
+                }
+            ]
+        }
+    ]
+}

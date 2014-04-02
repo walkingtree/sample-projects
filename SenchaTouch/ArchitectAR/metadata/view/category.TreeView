@@ -1,0 +1,72 @@
+{
+    "type": "Ext.dataview.NestedList",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "categoryTreeView",
+        "designer|userClassName": "category.TreeView",
+        "detailCard": "article.Detail",
+        "detailContainer": null,
+        "displayField": "title",
+        "masked": [
+            "{ xtype: 'loadmask',",
+            "               ",
+            "                message: 'Loading Catageories'",
+            "}"
+        ],
+        "store": "cattreestore"
+    },
+    "designerId": "4325524c-a4b1-4c88-bce3-1970903ea74a",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onNestedlistLeafItemTap",
+                "implHandler": [
+                    " if(record.getData().content ==\"\"){",
+                    "",
+                    "return false;",
+                    "  }",
+                    "",
+                    "     // console.log(record.getData().content);",
+                    "                var details=  Ext.ComponentQuery.query('articleDetail')[0] ;",
+                    "     var saveBtn = Ext.getCmp('saveBtn');",
+                    "\tsaveBtn.setHidden(false);",
+                    "\t\tdetails.setRecord(record);",
+                    "        details.setHtml(record.getData().content);",
+                    ""
+                ],
+                "name": "leafitemtap"
+            },
+            "designerId": "eb05fc02-013f-42d0-ab66-4261b058277b"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onNestedlistBack",
+                "implHandler": [
+                    "",
+                    "if(detailCardActive){",
+                    "    ",
+                    "    Ext.getCmp('saveBtn').setHidden(true);",
+                    "}"
+                ],
+                "name": "back"
+            },
+            "designerId": "c0016a3c-11a9-482f-9539-060c4bdc7e4a"
+        }
+    ]
+}

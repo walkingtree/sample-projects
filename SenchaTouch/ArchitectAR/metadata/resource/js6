@@ -1,0 +1,13 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js6",
+        "url": "resources/data/hi_labels.js"
+    },
+    "designerId": "1069f7b1-f764-4f0d-ba37-e1096df8b7c5"
+}

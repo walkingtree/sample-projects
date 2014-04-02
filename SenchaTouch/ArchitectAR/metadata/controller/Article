@@ -1,0 +1,125 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Article"
+    },
+    "designerId": "5053bd62-2ce1-40c0-9deb-b0d0c237f233",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "articleList",
+                "selector": "articlelist"
+            },
+            "designerId": "1fc2a294-4d01-49f9-bc43-b146b53749c6"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "articleList",
+                "designer|targetType": "article.List",
+                "fn": "ShowArticleOndisclose",
+                "implHandler": [
+                    "/*",
+                    "appNav=this.getAppnav();",
+                    "appNav.push({",
+                    "\txtype: 'articleDetail',",
+                    "\ttitle: record.data.title,",
+                    "\trecord: record,",
+                    "\tlayout:'fit',",
+                    "\thtml: \"<div class='articleContent'>\"+record.data.content+\"</div>\"",
+                    "",
+                    "\t\t\t});",
+                    "*/",
+                    "",
+                    " var app = this.getApplication();",
+                    "",
+                    "if(app){",
+                    "",
+                    "\t\tapp.fireEvent('articleListItemDisclose',list, record, target, index, e, eOpts);",
+                    "",
+                    "}"
+                ],
+                "name": "disclose"
+            },
+            "designerId": "6324c875-0ccf-4603-a64b-fd2d61526c03"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "appnav",
+                "selector": "arnavigation"
+            },
+            "designerId": "3f5b518a-4c7f-471c-9c43-6d090e5434af"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "",
+                    "",
+                    "",
+                    "/* this.getArticleList();",
+                    "",
+                    " var articles=Ext.create('AR.store.ArticleStore',{autoLoad:true});",
+                    " this.getArticleList().setStore(articles);",
+                    "*/"
+                ]
+            },
+            "designerId": "0630064f-825d-47d2-a746-5d4e22a31e42"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "list",
+                "designer|targetType": "article.List",
+                "fn": "onListItemTap",
+                "implHandler": [
+                    " if(Ext.os.deviceType==\"Phone\"){",
+                    "",
+                    "var app = this.getApplication();",
+                    "\t\t",
+                    "if(app){",
+                    "",
+                    "\t\tapp.fireEvent('articleListItemDisclose',dataview, record, target, index, e, eOpts);",
+                    "\t\t",
+                    "    }  ",
+                    "   }"
+                ],
+                "name": "itemtap"
+            },
+            "designerId": "9e349c69-d90a-489d-84f5-d751399e8bff"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css4",
+        "url": "resources/data/fonts/wtcar.woff"
+    },
+    "designerId": "dedce81f-dc22-4ef8-978b-78c1e0777cc1"
+}

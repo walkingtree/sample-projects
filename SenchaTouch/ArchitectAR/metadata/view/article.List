@@ -1,0 +1,75 @@
+{
+    "type": "Ext.dataview.List",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "articlelist",
+        "designer|userClassName": "article.List",
+        "itemId": null,
+        "masked": false,
+        "onItemDisclosure": true,
+        "requires": [
+            "AR.locale.Labels",
+            "Ext.plugin.ListPaging"
+        ],
+        "store": null
+    },
+    "configAlternates": {
+        "masked": "boolean"
+    },
+    "designerId": "304bfe6f-a1e2-43fd-af41-1808e98de1fb",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "itemTpl",
+                "implHandler": [
+                    " <div class=\"article-title\"> {title}</div>",
+                    " <div class=\"article-postedon\"> ",
+                    "     <span class=\"postedon-text\">{[this.labelval('POSTEDON_LABEL')]} </span> {date:date(\"F j,Y\")}</div>",
+                    " <div class=\"article-by\"> <span class=\"by-text\">{[this.labelval('BY_LABEL')]}</span> {author.first_name} {author.last_name}</div>",
+                    " <div class=\"article-item-detail\" style=\"clear:both;font-size:90%;\"> {excerpt}</div>"
+                ]
+            },
+            "designerId": "168db141-17e0-4a3d-a038-adf6d2a8c591",
+            "cn": [
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "lab"
+                        ],
+                        "fn": "labelval",
+                        "implHandler": [
+                            "",
+                            "return eval (\"AR.locale.Labels.\"+lab);"
+                        ]
+                    },
+                    "designerId": "93cbb026-2c44-4296-a903-35a84386bcb5"
+                }
+            ]
+        },
+        {
+            "type": "Ext.plugin.ListPaging",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "c4424116-ff5d-434d-8fcc-c7f7f3be9484"
+        }
+    ]
+}

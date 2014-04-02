@@ -1,0 +1,13 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js",
+        "url": "resources/data/en_labels.js"
+    },
+    "designerId": "48131af4-8c7a-4116-9253-3484804762a3"
+}

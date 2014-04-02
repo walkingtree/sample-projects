@@ -1,0 +1,16 @@
+{
+    "type": "libraryresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "basePath": "fonts/",
+        "designer|userClassName": "Library",
+        "includeCss": false,
+        "includeJs": false,
+        "theme": "indiansummer"
+    },
+    "designerId": "70760bbc-9363-4de6-bb8d-935eb11d0b3e"
+}

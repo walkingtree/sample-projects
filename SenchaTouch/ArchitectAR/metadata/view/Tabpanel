@@ -1,0 +1,107 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "centered": null,
+        "designer|userAlias": "artabpanel",
+        "designer|userClassName": "Tabpanel",
+        "docked": null,
+        "itemId": "mytabpanel",
+        "requires": [
+            "AR.store.ArticleStore"
+        ]
+    },
+    "configAlternates": {
+        "items": "object"
+    },
+    "designerId": "508fb1d6-35b6-464c-a145-542736b098e2",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "badgeText": null,
+                "designer|displayName": null,
+                "disableSelection": true,
+                "iconCls": "articles",
+                "itemId": "home",
+                "preventSelectionOnDisclose": null,
+                "title": "All Articles"
+            },
+            "designerId": "fab5bbda-ffa0-44ee-b260-11113bc1c00b",
+            "masterInstanceId": "304bfe6f-a1e2-43fd-af41-1808e98de1fb"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "By Categeories",
+                "iconCls": "category",
+                "itemId": "categories",
+                "title": "By Categeories"
+            },
+            "designerId": "1d12240d-4713-45e1-bcfd-215408d571d2",
+            "masterInstanceId": "93434fb9-2ab6-43b6-b46a-19d36b62ead8"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": null,
+                "iconCls": "users",
+                "itemId": "authors",
+                "title": "By Authors"
+            },
+            "designerId": "43f885de-9267-4bce-a4cd-429bdfeb1c9b",
+            "masterInstanceId": "d385dbd2-a0c0-4db2-9886-dd1ae47b6f5f"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": null,
+                "disableSelection": true,
+                "iconCls": "save",
+                "itemId": "myarticles",
+                "store": "articleLocalStore",
+                "title": "Saved Articles"
+            },
+            "designerId": "326a1626-d204-458a-bd3e-f6012cffcd30",
+            "masterInstanceId": "304bfe6f-a1e2-43fd-af41-1808e98de1fb"
+        },
+        {
+            "type": "Ext.tab.Bar",
+            "reference": {
+                "name": "tabBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": null,
+                "container|pack": null,
+                "docked": "bottom"
+            },
+            "designerId": "9cf54604-d4a6-4bdf-b639-c999a8d2e266"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "type": "jsoverrideresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js4",
+        "url": "app/override/Menu.js"
+    },
+    "designerId": "8325e41c-a782-4b91-a3a9-8d0c865dd164"
+}

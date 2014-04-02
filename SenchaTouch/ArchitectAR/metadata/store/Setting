@@ -1,0 +1,50 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "autoSync": true,
+        "designer|userClassName": "Setting",
+        "mixins": null,
+        "model": "Setting",
+        "storeId": "settingStore"
+    },
+    "configAlternates": {
+        "statics": "object"
+    },
+    "designerId": "8afc2d09-8893-43cd-aa74-18353a27c056",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.LocalStorage",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "setting-store"
+            },
+            "designerId": "9e8608f5-5639-4b15-bbf7-e97f75e66d47"
+        },
+        {
+            "type": "staticfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "Initialization",
+                "implHandler": [
+                    "",
+                    "Ext.create('AR.store.Setting');"
+                ]
+            },
+            "designerId": "ce21941d-94bb-410c-8234-22b348de9590"
+        }
+    ]
+}

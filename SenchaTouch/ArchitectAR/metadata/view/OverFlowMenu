@@ -1,0 +1,48 @@
+{
+    "type": "Ext.Menu",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "menu",
+        "designer|userClassName": "OverFlowMenu",
+        "enter": "right",
+        "exit": "right",
+        "id": null,
+        "itemId": "mymenu",
+        "style": "padding-top:20%;"
+    },
+    "designerId": "7053f226-c94f-46b5-965f-fc77b49243b0",
+    "cn": [
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "settings2",
+                "itemId": "settingbtn",
+                "text": "Settings"
+            },
+            "designerId": "1ba46009-2309-4d8f-ac65-6135b7fd04fc"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "info",
+                "itemId": "mybutton3",
+                "text": "About Us"
+            },
+            "designerId": "ca9a57a0-6030-4213-b889-094255244d61"
+        }
+    ]
+}

@@ -1,0 +1,1170 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Main",
+        "requires": [
+            "Ext.MessageBox"
+        ]
+    },
+    "designerId": "ec6eec27-778e-4bd0-a54e-3eed163bd989",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "appnav",
+                "selector": "arnavigation",
+                "xtype": "arnavigation"
+            },
+            "designerId": "2da66691-d89b-4858-8bbe-1d3b7130059e"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "articleList",
+                "selector": "articlelist"
+            },
+            "designerId": "12086cef-067e-4204-a769-12629ff5a5f2"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "categoryview",
+                "selector": "categoryIconView"
+            },
+            "designerId": "b9a45937-e618-47c4-8350-7c1e2d0bec52"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "authorview",
+                "selector": "authorIconView"
+            },
+            "designerId": "9b155d42-217c-40d2-9ead-08ca8ea2c6ce"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "settingspage",
+                "selector": "settingsform"
+            },
+            "designerId": "02186b97-0a2c-4a86-976a-326882550643"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "ShowHome",
+                "implHandler": [
+                    "",
+                    "  this.urlmodify('home');",
+                    "",
+                    "  var defaultTabItem = 0;",
+                    "  var defaultCatView = 0;",
+                    "  var settingStore= Ext.getStore('settingStore');",
+                    "",
+                    "\tif(!Ext.isEmpty(settingStore)){",
+                    "",
+                    "       settingStore.load({",
+                    "           callback: function(records, operation, success) {",
+                    "",
+                    "\t\t\tif(success){",
+                    "",
+                    "\t\t\t\tif(records.length > 0 ) {",
+                    "",
+                    "                defaultTabItem = records[0].data.defaultTabView;",
+                    "                defaultCatView =  records[0].data.defaultCatView;",
+                    "\t\t\t\t}",
+                    "\t\t\t}",
+                    "          }",
+                    "      });",
+                    "\t}",
+                    "",
+                    " this.showRoutesView(defaultTabItem,defaultCatView);",
+                    ""
+                ],
+                "url": "home"
+            },
+            "designerId": "8e2b4098-3209-4875-b2ce-26b416f57bfd"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "ShowCategoriesView",
+                "implHandler": [
+                    "this.showRoutesView(AR.util.Utility.CATEGORY_TAB_NO);",
+                    ""
+                ],
+                "url": "categories"
+            },
+            "designerId": "ce13c2cc-070a-4076-adeb-9a0676797b4d"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "ShowAuthorsView",
+                "implHandler": [
+                    "this.showRoutesView(AR.util.Utility.AUTHORS_TAB_NO);"
+                ],
+                "url": "authors"
+            },
+            "designerId": "efa2c32e-aa61-476d-b63f-6a2801463880"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "ShowSavedArticles",
+                "implHandler": [
+                    " this.showRoutesView(AR.util.Utility.SAVEDARTICLES_TAB_NO);",
+                    ""
+                ],
+                "url": "myarticles"
+            },
+            "designerId": "0e687822-361f-4922-9131-e59208420cbf"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "MenuSettingsBtn",
+                "ref": "settingbutton",
+                "selector": "button#settingbtn"
+            },
+            "designerId": "aa4b4d21-613e-43c1-acb6-81a1dda59f83"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#settingbtn",
+                "designer|targetType": "Ext.Button",
+                "fn": "ShowSettingsForm",
+                "implHandler": [
+                    "Ext.Viewport.hideAllMenus();",
+                    "",
+                    "this.urlmodify(''+window.location.hash+'/settings');",
+                    "",
+                    "appNav=this.getAppnav();",
+                    "this.getAppnav().getNavigationBar().backButtonStack[0] = this.getAppnav().getNavigationBar().getTitle();",
+                    "settings=Ext.create('AR.view.Setting',{title:AR.locale.Labels.MENUITEM_SETTINGS_LABEL});",
+                    "",
+                    "this.getAppnav().push(settings);"
+                ],
+                "name": "tap"
+            },
+            "designerId": "74087111-e31f-4198-a5d6-0888ca333995"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "settingspage",
+                "designer|targetType": "Ext.form.Panel",
+                "fn": "ShowValuesOfForm",
+                "implHandler": [
+                    "var me=this;",
+                    "Ext.Ajax.request({",
+                    "\t\t\turl: 'resources/data/settings.json',",
+                    "\t\t\tparams: {",
+                    "\t\t\t\tid: 1",
+                    "\t\t\t},",
+                    "\t\t\tsuccess: function(response){",
+                    "",
+                    "               me.getSettingspage();",
+                    "              var text = response.responseText;",
+                    "\t\t\t\t// process server response here",
+                    "",
+                    "\t\t\t\tvar settingdata=Ext.JSON.decode(text);",
+                    "",
+                    "                me.getSettingspage();",
+                    "",
+                    "",
+                    "       Ext.getCmp('languagefield').setOptions(settingdata.language);",
+                    "",
+                    "       Ext.getCmp('themefield').setOptions(settingdata.theme);",
+                    "",
+                    "       Ext.getCmp('tabfield').setOptions(settingdata.defaultTabView);",
+                    "",
+                    "       var settinglocalstore= Ext.data.StoreManager.lookup('settingStore');",
+                    "",
+                    "",
+                    "",
+                    "if(settinglocalstore.getCount() >=1 ){",
+                    "settinglocalstore.load();",
+                    "",
+                    "var datasettings=settinglocalstore.getData().all[0].data;",
+                    "",
+                    "Ext.getCmp('languagefield').setValue(datasettings.language);",
+                    "        Ext.getCmp('themefield').setValue(datasettings.theme);",
+                    "              Ext.getCmp('tabfield').setValue(datasettings.defaultTabView);",
+                    "",
+                    "              Ext.getCmp('sliderval').setHtml(datasettings.pageSize);",
+                    "",
+                    "              Ext.getCmp('togglecom').setValue(datasettings.defaultCatView);",
+                    "              Ext.getCmp('slidercom').setValue(datasettings.pageSize);",
+                    "",
+                    "              if(datasettings.defaultCatView===0){",
+                    "",
+                    "              Ext.getCmp('togglelabel').setHtml(''+AR.locale.Labels.FIELD_ICON_VIEW_LABEL+'');",
+                    "",
+                    "    }else{",
+                    "",
+                    "Ext.getCmp('togglelabel').setHtml(''+AR.locale.Labels.FIELD_LIST_VIEW_LABEL+'');",
+                    "",
+                    "  }",
+                    "",
+                    "\t\t\t}",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "            }",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "\t\t});"
+                ],
+                "name": "initialize"
+            },
+            "designerId": "1dbc513d-fe55-435e-819a-db15cdc2a6a4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#settingssavebtn",
+                "designer|targetType": "Ext.Button",
+                "fn": "SaveSettings",
+                "implHandler": [
+                    "",
+                    "",
+                    "",
+                    "    var settinglocalstore= Ext.data.StoreManager.lookup('settingStore');",
+                    "",
+                    "settinglocalstore.load();",
+                    "",
+                    "if(settinglocalstore.getCount() === 0){",
+                    "",
+                    "",
+                    "settinglocalstore.add({",
+                    "",
+                    "'language':Ext.getCmp('languagefield').getValue(),",
+                    "'theme':Ext.getCmp('themefield').getValue(),",
+                    "'defaultTabView':Ext.getCmp('tabfield').getValue(),",
+                    "'pageSize': Ext.getCmp('slidercom').getValue()[0],",
+                    "'defaultCatView':Ext.getCmp('togglecom').getValue()",
+                    "",
+                    "",
+                    "\t\t\t});",
+                    "",
+                    "settinglocalstore.sync();",
+                    "",
+                    "Ext.Msg.alert('WTC',AR.locale.Labels.SETTINGS_SUCESS_SAVEMESSAGE);",
+                    "",
+                    "// AR.util.Message.showAlertMsg('','SETTINGS_SUCESS_SAVEMESSAGE');",
+                    "",
+                    "window.location.reload();",
+                    "",
+                    "}else{",
+                    "",
+                    "var datasettings=settinglocalstore.getData().all[0].data;",
+                    "var themeValue = Ext.getCmp('themefield').getValue();",
+                    "",
+                    "",
+                    "settinglocalstore.getAt(0).setData({",
+                    "'id':settinglocalstore.getAt(0).getData().id,",
+                    "'language':Ext.getCmp('languagefield').getValue(),",
+                    "'theme':Ext.getCmp('themefield').getValue(),",
+                    "'defaultTabView':Ext.getCmp('tabfield').getValue(),",
+                    "'pageSize': Ext.getCmp('slidercom').getValue()[0],",
+                    "'defaultCatView':Ext.getCmp('togglecom').getValue()",
+                    "",
+                    "",
+                    "\t\t\t});",
+                    "",
+                    "settinglocalstore.getAt(0).setDirty();",
+                    "settinglocalstore.sync();",
+                    "Ext.Msg.alert('WTC',AR.locale.Labels.SETTINGS_SUCESS_SAVEMESSAGE);",
+                    "  //  AR.util.Message.showAlertMsg('sd','SETTINGS_SUCESS_UPDATEMESSAGE');",
+                    "    window.location.reload();",
+                    "",
+                    " }"
+                ],
+                "name": "tap"
+            },
+            "designerId": "3a133ca2-cc7f-408e-9c2d-8691ffb83944"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "arnavigation",
+                "designer|targetType": "Navigation",
+                "fn": "onNavigationviewActiveItemChange",
+                "implHandler": [
+                    "//debugger;",
+                    "",
+                    " //this.getAppnav().getNavigationBar().backButtonStack[0]=this.getAppnav().getNavigationBar().getTitle();",
+                    "",
+                    "Ext.getCmp('appmenu').setHidden(false);",
+                    "Ext.getCmp('saveBtn').setHidden(true);",
+                    "",
+                    "if(!Ext.isEmpty(value.getConfig)){",
+                    "",
+                    "",
+                    "    if( !Ext.isEmpty (value.config.menubtn) ){",
+                    "",
+                    "        if(value.getConfig('menubtn')==\"false\"){",
+                    "",
+                    "            Ext.getCmp('appmenu').setHidden(true);",
+                    "",
+                    "        }",
+                    "",
+                    "",
+                    "    }",
+                    "",
+                    "       if( !Ext.isEmpty (value.config.saveopt) ){",
+                    "",
+                    "        if(value.getConfig('saveopt')==\"true\"){",
+                    "",
+                    "            Ext.getCmp('saveBtn').setHidden(false);",
+                    "",
+                    "        }",
+                    "",
+                    "",
+                    "    }",
+                    "",
+                    "",
+                    "",
+                    "}",
+                    "",
+                    ""
+                ],
+                "name": "activeitemchange"
+            },
+            "designerId": "a61bd878-7a40-4152-89ef-1ae5e4f4887a"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "tabpanel",
+                "selector": "artabpanel"
+            },
+            "designerId": "3cd39403-b9b4-4f1f-bfbf-8609e60b43dc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "tabpanel",
+                "designer|targetType": "Tabpanel",
+                "fn": "showdefaultActiveitem",
+                "implHandler": [
+                    "   var el=component;",
+                    "   var settinglocalstore= Ext.data.StoreManager.lookup('settingStore');",
+                    "\t",
+                    "   settinglocalstore.load();",
+                    "   ",
+                    "   ",
+                    "   if(settinglocalstore.getCount() >= 1){",
+                    "   ",
+                    "        var datasettings=settinglocalstore.getData().all[0].data;",
+                    "",
+                    "\t",
+                    "\t\t\t",
+                    "\t\t\t",
+                    "// for setting default list View / Icon View\t\t",
+                    "\t\t",
+                    "        if(datasettings.defaultCatView==1){",
+                    "\t\t",
+                    "            el.removeAt(2);",
+                    " ",
+                    "\t\t\t//var c= Ext.create('AR.view.category.List');",
+                    "\t\t\t",
+                    "            el.insert(2,{ title:AR.locale.Labels.CATEGORY_TAB_LABEL,",
+                    "            iconCls :'category',activeItem:2,zIndex:2,itemId:'CategoryTree',",
+                    "            xtype:'categoryTreeView'});",
+                    "\t\t\t}",
+                    "   }  "
+                ],
+                "name": "initialize"
+            },
+            "designerId": "90ac4950-8067-431f-858f-efc2d72f7850"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "activeTabNo"
+                ],
+                "fn": "getViewTitle",
+                "implHandler": [
+                    "",
+                    "",
+                    "\tvar title = '';",
+                    "\tif(Ext.isEmpty(activeTabNo)){",
+                    "",
+                    "\t\ttitle =  AR.locale.Labels.ARTICLES_VIEW_TITLE;",
+                    "\t}else{",
+                    "",
+                    "switch (activeTabNo){",
+                    "",
+                    "case 0 :",
+                    "",
+                    "\t\t\ttitle = AR.locale.Labels.ARTICLES_VIEW_TITLE;",
+                    "\t\t\tbreak;",
+                    "",
+                    "case 1:",
+                    "",
+                    "\t\t\ttitle = AR.locale.Labels.CATEGORY_VIEW_TITLE;",
+                    "\t\t\tbreak;",
+                    "case 2:",
+                    "",
+                    "\t\t\ttitle = AR.locale.Labels.AUTHORS_VIEW_TITLE;",
+                    "\t\t\tbreak;",
+                    "",
+                    "case 3:",
+                    "",
+                    "\t\t\ttitle = AR.locale.Labels.SAVEDARTI_VIEW_TITLE;",
+                    "\t\t\tbreak;",
+                    "",
+                    "default :",
+                    "",
+                    "\t\t\ttitle = '';",
+                    "",
+                    " }",
+                    "}",
+                    "",
+                    "",
+                    "\treturn title;",
+                    ""
+                ]
+            },
+            "designerId": "73729045-1113-4064-ae8a-ec2293eb79fc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "tabpanel",
+                "designer|targetType": "Tabpanel",
+                "fn": "onTabitemChange",
+                "implHandler": [
+                    "\tvar navBar = this.getAppnav().getNavigationBar();",
+                    "",
+                    "",
+                    " if(Ext.isFunction(value.getItemId)){",
+                    "",
+                    "         /*this.getApplication().getHistory().add(new Ext.app.Action({",
+                    "\t\t\t\turl: value.getItemId()",
+                    "\t\t\t}), true);*/",
+                    "    // console.log(value.getItemId());",
+                    "      this.urlmodify(value.getItemId());",
+                    "",
+                    "\t}",
+                    "if(container.indexOf(value)== 2 || container.indexOf(value)== 3){",
+                    "",
+                    "\t\t\tnavBar.setTitle(this.getViewTitle(container.indexOf(value)-1));",
+                    "",
+                    "\t\t}else{",
+                    "",
+                    "\t\t\tif(!Ext.isEmpty(value.config)){",
+                    "",
+                    "\t\t\tnavBar.setTitle(value.config.title);",
+                    "",
+                    "\t\t\t}",
+                    "",
+                    "\t\t}"
+                ],
+                "name": "activeitemchange"
+            },
+            "designerId": "ad9dac30-cf82-45d4-9845-9de762c1c7f1"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "activeTabNo",
+                    "defaultCatView"
+                ],
+                "fn": "showRoutesView",
+                "implHandler": [
+                    "",
+                    "\tvar navView\t= this.getAppnav();",
+                    "\tvar viewTitle\t= this.getViewTitle(activeTabNo);",
+                    "",
+                    "\tif(!Ext.isEmpty(navView)){",
+                    "",
+                    "\t/*\tvar view = Ext.create('AR.view.Tabpanel', {",
+                    "             title : viewTitle",
+                    "\t\t}); */",
+                    "",
+                    "       // navView.add(view);",
+                    "      navView.getNavigationBar().setTitle(this.getViewTitle(0));",
+                    "      //  this.getAppnav().getNavigationBar().backButtonStack[0]=this.getViewTitle(0);",
+                    "        var tabpanelarticles=Ext.create('AR.store.ArticleStore',{autoLoad:true});",
+                    "",
+                    "        view = this.getTabpanel();",
+                    "",
+                    "",
+                    "        view.getAt(0).setStore(tabpanelarticles);",
+                    "",
+                    "\t\tif(defaultCatView==1){",
+                    "",
+                    "\t\t\tif(activeTabNo == 1){",
+                    "\t\t\tview.setActiveItem(view.getAt(2));",
+                    "               } else{",
+                    "            view.setActiveItem(activeTabNo);",
+                    "",
+                    "             }",
+                    "",
+                    "         }else{",
+                    "",
+                    "             view.setActiveItem(activeTabNo);",
+                    "",
+                    "         }",
+                    "",
+                    "",
+                    "",
+                    "\t\tExt.Viewport.add(navView);",
+                    "\t}",
+                    ""
+                ]
+            },
+            "designerId": "1deec246-600f-4259-9082-b8313a63da91"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    " var me = this;",
+                    "",
+                    " this.getApplication().on('articleListItemDisclose',function(list,record,target,index,e,eOpts){",
+                    "     me.showArticleDetailView(list,record,target,index,e,eOpts);",
+                    "   }",
+                    "   );",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            "designerId": "8a649497-6bcb-4bb0-8c8d-19ab69359a07"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "urlparam"
+                ],
+                "fn": "urlmodify",
+                "implHandler": [
+                    "  this.getApplication().getHistory().add(new Ext.app.Action({",
+                    "            url: urlparam",
+                    "        }), true);",
+                    ""
+                ]
+            },
+            "designerId": "2d210465-d2dd-4ba0-a0ba-03d4355d8b4a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "navigationview",
+                "designer|targetType": "Navigation",
+                "fn": "checkurl",
+                "implHandler": [
+                    "",
+                    "document.title=\"AR\";",
+                    "",
+                    "\t\tvar urlArrry=window.location.hash.split('/');",
+                    "\t\tvar k=0;",
+                    "\t\tif(urlArrry.length > 2){",
+                    "",
+                    "\t\tvar rep=urlArrry.length-2;",
+                    "",
+                    "         }else{",
+                    "//debugger;",
+                    "",
+                    "        rep =0;",
+                    "",
+                    "      }",
+                    "         var fineurl=\"\";",
+                    "    for(var u in urlArrry){",
+                    "",
+                    "if(k <= rep){",
+                    "           fineurl +=urlArrry[k];",
+                    "  fineurl +='/';",
+                    "}",
+                    "k++;",
+                    "",
+                    "\t\t}",
+                    "",
+                    "       var fineurl=fineurl.replace('#','');",
+                    "       fineurl = fineurl.substring(0, fineurl.length - 1);",
+                    "       this.urlmodify(fineurl);"
+                ],
+                "name": "back"
+            },
+            "designerId": "78f67569-424d-4d63-af33-6e7c88cd6c30"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#saveBtn",
+                "designer|targetType": "Ext.Button",
+                "fn": "SaveButtonAction",
+                "implHandler": [
+                    "var loadingMaskText = 'Saving article';",
+                    "",
+                    "\t\tExt.Viewport.mask({ xtype: 'loadmask',message: loadingMaskText, indicator:true });",
+                    "",
+                    "\t\tvar navView = button.up('navigationview');",
+                    "",
+                    "\t\tif(!Ext.isEmpty(navView)){",
+                    "",
+                    "\t\t\tvar record = null;",
+                    "",
+                    "\t\t\t\trecord = navView.getActiveItem().getRecord();",
+                    "",
+                    "\t\t\tif(Ext.isEmpty(record)){",
+                    "",
+                    "\t\t\t\trecord =  Ext.ComponentQuery.query('articleDetail')[0].getRecord();",
+                    "",
+                    "\t\t\t}",
+                    "",
+                    "",
+                    "\t\t\tif(!Ext.isEmpty(record))",
+                    "",
+                    "\t\t\t\tthis.saveArticle(record);",
+                    "",
+                    "\t\t}else{",
+                    "\t\tvar record = navView.getActiveItem().getRecord();",
+                    "\t\tconsole.log(record.data.title);",
+                    "\t\t}"
+                ],
+                "name": "tap"
+            },
+            "designerId": "4842d664-3040-438d-8721-079c659e0f64"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "saveArticle",
+                "implHandler": [
+                    "var localArticleStore = Ext.getStore('articleLocalStore');",
+                    "",
+                    "localArticleStore.load();",
+                    "",
+                    "if (null == localArticleStore.findRecord('articleId', record.data.id)) {",
+                    "",
+                    "\t\tlocalArticleStore.add({",
+                    "\t\t\t\t\tarticleId\t: record.data.id,",
+                    "\t\t\t\t\ttitle\t\t: record.data.title,",
+                    "\t\t\t\t\tdate\t\t: record.data.date,",
+                    "\t\t\t\t\tcontent: record.data.content,",
+                    "\t\t\t\t\texcerpt\t: record.data.excerpt,",
+                    "\t\t\t\t\tstatus: record.data.status,",
+                    "\t\t\t\t\tauthor\t: record.data.author",
+                    "\t\t\t\t});",
+                    "    }",
+                    "",
+                    " localArticleStore.sync();",
+                    "",
+                    "         Ext.Msg.alert('',AR.locale.Labels.ARTICLE_SUCESS_SAVEMESSAGE);",
+                    "",
+                    "\t\tExt.Viewport.unmask();"
+                ]
+            },
+            "designerId": "ff295b72-b286-4d96-930f-4ad19fc3183e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "list",
+                    "record",
+                    "target",
+                    "index",
+                    "e",
+                    "eOpts"
+                ],
+                "fn": "showArticleDetailView",
+                "implHandler": [
+                    " this.urlmodify(''+window.location.hash+'/'+record.getData().id+'');",
+                    "",
+                    "\t\tvar appNav = this.getAppnav();",
+                    "",
+                    "\t\tif(appNav){",
+                    "",
+                    "            if(!Ext.isBoolean(list)){",
+                    "\t\t\tvar saveValue = list.config.localArticleView;",
+                    "            }else{",
+                    "\t\t\tvar saveValue =false;",
+                    "\t\t\t}",
+                    "",
+                    "\t\t\tvar exp = /<a\\s.*href=['\"](\\b(https?|ftp|file|http):\\/\\/[-A-Z0-9+&@#\\/%?=~_|!:,.;]*[-A-Z0-9+&@#\\/%=~_|].(jpg|jpeg|gif|JPG|png|PNG))['\"].*>.*<\\/a>/ig;",
+                    "             record.data.content = record.data.content.replace(exp,\"<img src='$1' />\");",
+                    "       record.data.content  =Ext.String.htmlDecode(record.data.content);",
+                    "            document.title=record.data.title;",
+                    "\t\t\tappNav.push({",
+                    "\t\t\t\txtype: 'articleDetail',",
+                    "\t\t\t\ttitle: record.data.title,",
+                    "\t\t\t\trecord: record,",
+                    "                layout:'fit',",
+                    "",
+                    "                html  : \"<div class='articleContent'>\"+record.data.content+\"</div>\",",
+                    "                saveopt: 'true'",
+                    "",
+                    "\t\t\t});",
+                    "",
+                    "",
+                    "\t\t}",
+                    ""
+                ]
+            },
+            "designerId": "9e8896ed-25b9-402f-9b06-7b4fee579c88"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "id"
+                ],
+                "fn": "showArticlesOfAuthor",
+                "implHandler": [
+                    "\tif(!Ext.Viewport.down('tabpanel')){",
+                    "",
+                    "//Ext.Viewport.add(this.getAppnav());",
+                    "",
+                    "this.ShowAuthorsView();",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "\t}",
+                    "this.urlmodify('authors/'+id+'');",
+                    "",
+                    "Author= Ext.data.StoreManager.lookup('authorStore');",
+                    "",
+                    "if(!Ext.isEmpty(Author.getTotalCount())){",
+                    "  var authortitle=Author.getById(id).getData().first_name;",
+                    "  var authortitle = AR.locale.Labels.ARTICLELIST_VIEW_TITLE+\"-By \"+authortitle;",
+                    "",
+                    "   }else{",
+                    "    var  authortitle = AR.locale.Labels.AUTHORS_VIEW_TITLE;",
+                    "    }",
+                    "",
+                    "",
+                    "this.getAppnav().getNavigationBar().backButtonStack[0]=AR.locale.Labels.AUTHORS_VIEW_TITLE;",
+                    "",
+                    "var Articls_auth=Ext.create('AR.store.ArticleStore',{autoLoad:false});",
+                    "           Articls_auth.setParams({'author':id});",
+                    "           Articls_auth.load();",
+                    "var Articles= Ext.create('AR.view.article.List',{store:Articls_auth,title:authortitle});",
+                    "this.getAppnav().push(Articles);"
+                ],
+                "url": "authors/:id"
+            },
+            "designerId": "349b38d8-d8bb-4edf-852b-2a25349db94e"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "id"
+                ],
+                "fn": "showArticlesOfCategory",
+                "implHandler": [
+                    "if(!Ext.Viewport.down('tabpanel')){",
+                    "",
+                    "           // Ext.Viewport.add(this.getMainnav());",
+                    "",
+                    "            this.ShowCategoriesView();",
+                    "",
+                    "\t\t\t// this.urlmodify('categories/'+categoryId+'');",
+                    "",
+                    "\t\t}",
+                    "",
+                    "this.urlmodify('categories/'+id+'');",
+                    "",
+                    "",
+                    "",
+                    "categorys= Ext.data.StoreManager.lookup('CategoryStore');",
+                    "",
+                    "if(!Ext.isEmpty(categorys.getTotalCount())){",
+                    "  var categorytitle=Author.getById(id).getData().first_name;",
+                    "  var categorytitle = AR.locale.Labels.ARTICLELIST_VIEW_TITLE+\"-By \"+authortitle;",
+                    "",
+                    "   }else{",
+                    "    var  categorytitle = AR.locale.Labels.AUTHORS_VIEW_TITLE;",
+                    "    }",
+                    "",
+                    "",
+                    " this.getAppnav().getNavigationBar().backButtonStack[0]=AR.locale.Labels.CATEGORY_VIEW_TITLE;",
+                    "",
+                    "  var Articls_cate=Ext.create('AR.store.ArticleStore',{autoLoad:false});",
+                    "  Articls_cate.setParams({'cat':id});",
+                    "  Articls_cate.load();",
+                    "  var Articles= Ext.create('AR.view.article.List',{store:Articls_cate,title:categorytitle});",
+                    "  this.getAppnav().push(Articles);"
+                ],
+                "url": "categories/:id"
+            },
+            "designerId": "d726780c-2a43-4fc6-b3b3-f84c14a70da0"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "id",
+                    "articleId"
+                ],
+                "fn": "showArticleDetailsOfAuthor",
+                "implHandler": [
+                    " this.showArticlesOfAuthor(id);",
+                    " this.showArticleDetail(articleId,'authors',id);"
+                ],
+                "url": "authors/:id/:articleId"
+            },
+            "designerId": "237ab4aa-0f0d-4ee1-ab8d-858fac460fec"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "id",
+                    "articleId"
+                ],
+                "fn": "showArticleDetailsOfCategory",
+                "implHandler": [
+                    " this.showArticlesOfCategory(id);",
+                    " this.showArticleDetail(articleId,'category',id);"
+                ],
+                "url": "categories/:id/:articleId"
+            },
+            "designerId": "e4af97b1-426f-46af-86c0-adbb277be108"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "articleId",
+                    "fromview",
+                    "filterbyid"
+                ],
+                "fn": "showArticleDetail",
+                "implHandler": [
+                    "\tvar me = this;",
+                    "",
+                    "\t\tif(Ext.isEmpty(fromview)){",
+                    "",
+                    "",
+                    "",
+                    "records=Ext.create('AR.store.ArticleStore',{autoLoad:false});",
+                    "records.setParams({'post_id':articleId,url:AR.util.Utility.api.singlePost});",
+                    "\t\t}else{",
+                    "",
+                    "if(fromview==\"authors\"){",
+                    " records=Ext.create('AR.store.ArticleStore',{autoLoad:false});",
+                    " records.setParams({'author':filterbyid});",
+                    "  }",
+                    "",
+                    "  if(fromview==\"category\"){",
+                    "  records=Ext.create('AR.store.ArticleStore',{autoLoad:false});",
+                    "  records.setParams({'cat':filterbyid});",
+                    "  }",
+                    "",
+                    "",
+                    "",
+                    "\t\t}",
+                    " records.load(function(records1, operation, success) {",
+                    "",
+                    "var inde = records.find('articleId',articleId);",
+                    "",
+                    "if(records1[inde]!= -1){",
+                    "me.showArticleDetailView(true,records1[inde]);",
+                    "      }",
+                    "",
+                    "",
+                    "       }, this);"
+                ]
+            },
+            "designerId": "65117ac8-0a16-4ec7-a680-267d3e3404b5"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "id"
+                ],
+                "fn": "showArticleDetailsfromroutes",
+                "implHandler": [
+                    "",
+                    "     var list=false;",
+                    "",
+                    "\t\tvar appNav = this.getAppnav();",
+                    "",
+                    "",
+                    "            appNav.removeAll();",
+                    "",
+                    "     if(appNav){",
+                    "",
+                    "         if(!Ext.isBoolean(list)){",
+                    "\t\t\tvar saveValue = list.config.localArticleView;",
+                    "            }else{",
+                    "           var saveValue =false;",
+                    "          }",
+                    "",
+                    "",
+                    "",
+                    "\t\t\tvar exp = /<a\\s.*href=['\"](\\b(https?|ftp|file|http):\\/\\/[-A-Z0-9+&@#\\/%?=~_|!:,.;]*[-A-Z0-9+&@#\\/%=~_|].(jpg|jpeg|gif|JPG|png|PNG))['\"].*>.*<\\/a>/ig;",
+                    "",
+                    "",
+                    "",
+                    "           records=Ext.create('AR.store.ArticleStore',{autoLoad:false});",
+                    "           records.setParams({'post_id':id});",
+                    "",
+                    "",
+                    "",
+                    "        records.load({url:AR.util.Utility.api.singlePost, reader: {",
+                    "                type: 'json',",
+                    "                rootProperty: 'post'",
+                    "            },callback:function(records1, operation, success) {",
+                    "",
+                    "",
+                    "           record=operation.getResponse().post;",
+                    "",
+                    "",
+                    "           record.content = record.content.replace(exp,\"<img src='$1' />\");",
+                    "",
+                    "            record.content =Ext.String.htmlDecode(record.content);",
+                    "            document.title=record.title;",
+                    "           debugger;",
+                    "\t\t\tvar detailview=Ext.create('AR.view.article.Detail',{",
+                    "                    title: record.title,",
+                    "\t\t\t\t\trecord: record,fullScreen:true,",
+                    "                    saveopt:\"false\",",
+                    "",
+                    "                    layout:'fit',",
+                    "\t\t\t\t\thtml: \"<div class='articleContent'>\"+record.content+\"</div>\"});",
+                    "",
+                    "         // appNav.getNavigationBar().getBackButton().setHidden(true);",
+                    "",
+                    "          appNav.insert(0,detailview);",
+                    "            Ext.Viewport.add(appNav);",
+                    "                appNav.getNavigationBar().getBackButton().hide();",
+                    "",
+                    "            }});",
+                    "",
+                    "",
+                    "\t\t}"
+                ],
+                "url": "home/:id"
+            },
+            "designerId": "f8eef2b5-bfad-4028-959d-6af55296603a"
+        },
+        {
+            "type": "Ext.app.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "emptyHandle",
+                "implHandler": [
+                    "this.ShowHome();"
+                ],
+                "url": ""
+            },
+            "designerId": "fb6f6470-f1f3-4383-93e1-be0dc31c79e1"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#mybutton3",
+                "designer|targetType": "Ext.Button",
+                "fn": "onButtonTap",
+                "implHandler": [
+                    "Ext.Viewport.hideAllMenus();",
+                    "",
+                    "this.urlmodify(''+window.location.hash+'/AboutApp');",
+                    "",
+                    "",
+                    "",
+                    "this.getAppnav().getNavigationBar().backButtonStack[0] = this.getAppnav().getNavigationBar().getTitle();",
+                    "",
+                    "this.getAppnav().push({xtype:'about',appmenu:\"false\",title:'Article Reader Application'});"
+                ],
+                "name": "tap"
+            },
+            "designerId": "eff05c9d-61a4-424a-ad1e-7679d785c266"
+        }
+    ]
+}

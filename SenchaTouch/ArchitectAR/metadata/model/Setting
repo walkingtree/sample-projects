@@ -1,0 +1,92 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Setting"
+    },
+    "designerId": "7525f2b1-fdd3-4fac-830f-37bd43782cbf",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "language",
+                "type": "string"
+            },
+            "designerId": "55e4cf73-30e6-4788-b20b-931d4be73113"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "theme",
+                "type": "string"
+            },
+            "designerId": "46dea8bf-8a1c-4695-8bff-24d6e35f8d8c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "defaultCatView",
+                "type": "string"
+            },
+            "designerId": "545e080f-c135-483e-8ff3-e7711680285e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "pageSize",
+                "type": "int"
+            },
+            "designerId": "68fff311-12c6-416d-a2f7-c1c06fedc19b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "defaultTabView",
+                "type": "int"
+            },
+            "designerId": "24b517f0-618e-468d-bca7-999c0d598c24"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id",
+                "type": "int"
+            },
+            "designerId": "bad287d5-b870-4821-b238-c381c284daeb"
+        }
+    ]
+}

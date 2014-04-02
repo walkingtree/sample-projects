@@ -1,0 +1,14 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js2",
+        "url": "app/locale/ChooseLabels.js",
+        "x-bootstrap": true
+    },
+    "designerId": "c2fe0225-daf4-499d-8063-2d422702934b"
+}

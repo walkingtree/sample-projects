@@ -1,0 +1,13 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css2",
+        "url": "resources/data/fonts/wtcar.svg"
+    },
+    "designerId": "e37ff6e9-d9fa-4d3c-9729-718a4fd904ef"
+}

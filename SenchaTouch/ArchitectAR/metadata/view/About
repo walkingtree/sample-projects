@@ -1,0 +1,56 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "about",
+        "designer|userClassName": "About",
+        "menubtn": "false",
+        "scrollable": "vertical",
+        "styleHtmlContent": true
+    },
+    "designerId": "913fb33d-d939-4df6-a8ed-7f0da09e284b",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "menubtn",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "",
+                    "",
+                    "",
+                    "  Ext.Ajax.request({",
+                    "            url: 'resources/data/about.html',",
+                    "            success: function(rs) {",
+                    "                this.setHtml(rs.responseText);",
+                    "            },",
+                    "            scope: this",
+                    "        });",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "this.callParent();"
+                ]
+            },
+            "designerId": "e7a3b35b-1c4b-4fd2-87ab-288215ae1aad"
+        }
+    ]
+}

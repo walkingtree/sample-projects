@@ -1,0 +1,32 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "articleDetail",
+        "designer|userClassName": "article.Detail",
+        "saveopt": "true",
+        "scrollable": [
+            "{ ",
+            "    ",
+            "    direction: 'vertical'",
+            "    ",
+            "}"
+        ],
+        "styleHtmlContent": true
+    },
+    "configAlternates": {
+        "scrollable": "object"
+    },
+    "designerId": "f9d625a1-d41c-4a4d-927c-a6dab85966ce",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "saveopt",
+            "type": "string"
+        }
+    ]
+}

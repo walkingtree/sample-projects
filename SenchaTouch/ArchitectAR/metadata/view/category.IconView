@@ -1,0 +1,292 @@
+{
+    "type": "Ext.dataview.DataView",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "categoryIconView",
+        "designer|userClassName": "category.IconView",
+        "inline": true,
+        "itemId": "mydataview",
+        "modal": null,
+        "requires": [
+            "AR.util.Utility"
+        ],
+        "store": "CategoryStore",
+        "style": "margin: 0 2% 0 2%;"
+    },
+    "configAlternates": {
+        "inline": "boolean"
+    },
+    "designerId": "93434fb9-2ab6-43b6-b46a-19d36b62ead8",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "itemTpl",
+                "implHandler": [
+                    "<div class=\"tbox\" style=\"height:{[this.caldim(xcount,\"h\")]}px;width:{[this.caldim(xcount,\"w\")]}px;background:{% if(xindex === 0) { ty=xindex-1; } if ( xindex <= this.colorslen()) { ty++;  } else { if( ty >= this.colorslen() ) { ty=0;  } else{ ty++; }   }  %}{[this.colors(ty)]}\" > <div class=\"tboxInnerCategory\">",
+                    "<tpl if=\"post_count &gt; 0\">",
+                    "<div class=\"digit-div\" ><span class=\"digit\" style=\"font-size:{[this.calfont(xcount)]}px\">{post_count}</span></div>",
+                    "</tpl>\t\t\t",
+                    "<div class=\"titleBox\" style=\"font-size:{[this.calfonttext(xcount)]}px\" >{title}</div>",
+                    "</div>",
+                    "</div>"
+                ]
+            },
+            "designerId": "325e6039-6191-495f-a795-456c64c5051f",
+            "cn": [
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "col"
+                        ],
+                        "fn": "colors",
+                        "implHandler": [
+                            "return AR.util.Utility.colors[col];"
+                        ]
+                    },
+                    "designerId": "92304dc0-73c2-4857-b3a4-d7aa8acad40a"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "c"
+                        ],
+                        "fn": "calwidth",
+                        "implHandler": [
+                            "     var mintile = 160;",
+                            "     var width = Ext.getDoc().dom.clientWidth;",
+                            "   ",
+                            "    if(  width < 360)",
+                            "    {",
+                            "        var mintile = 100;\t",
+                            "    }",
+                            "    ",
+                            "    margin = width * 0.02 * 2;",
+                            "    ",
+                            "    var finalwidth = width - margin;",
+                            "    var pertile  = Math.floor(finalwidth / mintile) ;",
+                            "    ",
+                            "    pertile = pertile -1;",
+                            "     ",
+                            "    var finalwidth = finalwidth - (5 * pertile);",
+                            "    var tilewidth= finalwidth / pertile;",
+                            "",
+                            "",
+                            "    return tilewidth;              "
+                        ]
+                    },
+                    "designerId": "99f707d5-6ae1-4617-baa3-de0fbde4a13f"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "integer",
+                            "dim"
+                        ],
+                        "fn": "caldim",
+                        "implHandler": [
+                            " while (this.isPrime(integer)){",
+                            "                               integer++;",
+                            "                            }",
+                            "                                                  var factor1=  this.getFactors(integer);",
+                            "                                                  var factor2=  this.getSecondfactor(integer,factor1);  ",
+                            "                                                ",
+                            "                                                  ",
+                            "                                                   var width =   Ext.getDoc().dom.clientWidth  - 20  ;",
+                            "                                                   ",
+                            "                                                   margin = width * 0.02 * 2;",
+                            "                                                   var width = width- margin;",
+                            "                                                   tabbarheight =Ext.ComponentQuery.query('artabpanel')[0].getTabBar().element.dom.clientHeight;",
+                            "                                                   var height =  Ext.getDoc().dom.clientHeight - ( 2 * tabbarheight ) - 10;",
+                            "                                              ",
+                            "                                                                                                  ",
+                            "                                                ",
+                            "                     if(width >= height){",
+                            "                                           ",
+                            "                                          var tilewidth = width  / Math.max(factor1,factor2);",
+                            "                                          var tileheight = height/ Math.min(factor1,factor2);  ",
+                            "                                         }else{",
+                            "                                         ",
+                            "                                           var tilewidth = width / Math.min(factor1,factor2);",
+                            "                                           var  tileheight =  height  / Math.max(factor1,factor2);",
+                            "                                             ",
+                            "                                         }                                              ",
+                            "                                                 //~ console.log(width+\"--\"+height);                ",
+                            "                                                 //~ console.log(factor1+\"--\"+factor2);     ",
+                            "                                                 //~ console.log(tilewidth+\"--\"+tileheight);        ",
+                            "                                                 ",
+                            "                                                 if(dim==\"h\"){",
+                            "                                                 return Math.floor(tileheight);",
+                            "                                                 }else{",
+                            "                                                 return Math.floor(tilewidth);",
+                            "                                                 }",
+                            "                                               "
+                        ]
+                    },
+                    "designerId": "5d594064-8cec-4338-ae16-5839ac8a7a16"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "integer"
+                        ],
+                        "fn": "getFactors",
+                        "implHandler": [
+                            "  var factors = [],",
+                            "  quotient = 0;",
+                            " ",
+                            "  for(var i = 1; i <= integer; i++){",
+                            "    quotient = integer/i;",
+                            "",
+                            "    if(quotient === Math.floor(quotient)){",
+                            "      factors.push(i); ",
+                            "    }",
+                            "  }",
+                            " var firstfactorindex= Math.floor(factors.length/2);",
+                            " var firstfactor=factors[firstfactorindex];",
+                            "  return firstfactor;"
+                        ]
+                    },
+                    "designerId": "5bd31ee3-3fc3-4c4a-a975-0b0a61f5b623"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "number",
+                            "ffc"
+                        ],
+                        "fn": "getSecondfactor",
+                        "implHandler": [
+                            " return number/ffc;"
+                        ]
+                    },
+                    "designerId": "848639f2-47ec-46a4-bf29-ea9a752e8df9"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "numb"
+                        ],
+                        "fn": "isPrime",
+                        "implHandler": [
+                            "  for(var i=2; i<= Math.sqrt(numb); i++){",
+                            " if(numb % i === 0){",
+                            "   ",
+                            "     return false;",
+                            " }",
+                            "  }",
+                            "  return true;"
+                        ]
+                    },
+                    "designerId": "c3dc427e-4f71-4c47-887c-a77c52029473"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "count"
+                        ],
+                        "fn": "calfont",
+                        "implHandler": [
+                            "  var h=this.caldim(count,\"h\");",
+                            "\t\tfont= h/2 ;",
+                            "if(font >= 120){",
+                            "\t\t\tfont =120;",
+                            "}",
+                            " return font;\t"
+                        ]
+                    },
+                    "designerId": "42ca1128-4da5-46be-a811-10ec89a18145"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "count"
+                        ],
+                        "fn": "calfonttext",
+                        "implHandler": [
+                            "  var h=this.caldim(count,\"h\");",
+                            "font= h/8;",
+                            "if(font >= 20){",
+                            "\t\t\tfont = 20;",
+                            "\t\t\t}  ",
+                            " return  font;"
+                        ]
+                    },
+                    "designerId": "02495a63-7f9e-4f8e-a9cf-f978527003b9"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "colorslen",
+                        "implHandler": [
+                            "    return AR.util.Utility.colors.length-1;"
+                        ]
+                    },
+                    "designerId": "31b2f4cb-91b1-4869-8ade-acc866bac259"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,106 @@
+{
+    "type": "Ext.navigation.View",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "arnavigation",
+        "designer|userClassName": "Navigation",
+        "requires": [
+            "Ext.NavigationView",
+            "Ext.navigation.View"
+        ]
+    },
+    "configAlternates": {
+        "items": "array"
+    },
+    "designerId": "fb35c4d0-00e6-4f56-aa99-a721063bdaac",
+    "cn": [
+        {
+            "type": "Ext.navigation.Bar",
+            "reference": {
+                "name": "navigationBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top"
+            },
+            "designerId": "023071a9-0f1a-4372-8a9c-b16d4cae046d",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "menu",
+                        "id": "appmenu",
+                        "itemId": "mybutton",
+                        "text": null
+                    },
+                    "designerId": "6c28b230-2916-48cf-9a51-3d811c6f4f06",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybuttonTap",
+                                "implHandler": [
+                                    "var menu =Ext.create('AR.view.OverFlowMenu');",
+                                    "",
+                                    "",
+                                    "Ext.Viewport.setMenu(menu, {",
+                                    "     side: 'right',",
+                                    "     reveal: false,",
+                                    "    cover:true",
+                                    " });",
+                                    "",
+                                    "Ext.Viewport.toggleMenu('right');"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "fa713e21-0bd5-4091-9fe8-a1f6697e7617"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "designer|uiInterfaceName": "round",
+                        "hidden": true,
+                        "id": "saveBtn",
+                        "itemId": "saveBtn",
+                        "text": "Save",
+                        "ui": "round"
+                    },
+                    "designerId": "57ed6f70-5910-4ddd-acbc-cbe220ef0905"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "724e1924-1af5-403c-bfe5-7ee7c37342a9",
+            "masterInstanceId": "508fb1d6-35b6-464c-a145-542736b098e2"
+        }
+    ]
+}

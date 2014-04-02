@@ -1,0 +1,53 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "Author",
+        "model": "Author",
+        "storeId": "authorStore"
+    },
+    "designerId": "c2d7bf0c-4b60-4f90-b95a-dfc1a02a8fe5",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{read:AR.util.Utility.api.allauthors",
+                    "}"
+                ],
+                "extraParams": [
+                    "{",
+                    "    ",
+                    "    ",
+                    "    author_meta:'email,posts'",
+                    "}"
+                ]
+            },
+            "designerId": "f94b2221-39f2-4d35-81c6-f49f27217f75",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "authors"
+                    },
+                    "designerId": "3c5467c4-8cc6-406f-b04b-0504ffa2bdb2"
+                }
+            ]
+        }
+    ]
+}

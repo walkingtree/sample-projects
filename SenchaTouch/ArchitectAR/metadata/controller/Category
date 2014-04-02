@@ -1,0 +1,86 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Category"
+    },
+    "designerId": "a461ef51-2bbe-425c-ae91-45a272781695",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "appnav",
+                "selector": "arnavigation"
+            },
+            "designerId": "b591e010-6a45-453e-a390-2438dc352a55"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "articleList",
+                "selector": "articlelist"
+            },
+            "designerId": "e1bf2c39-c1d4-46c0-8367-73735a5fb263"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "categoryview",
+                "designer|targetType": "category.IconView",
+                "fn": "ShowArticlesOfCategory",
+                "implHandler": [
+                    "/*categoryId=record.data.id;",
+                    "categorytitle=record.data.title;",
+                    "appNav=this.getAppnav();",
+                    "",
+                    "Articls_cate=Ext.create('AR.store.ArticleStore',{autoload:false});",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "Articls_cate.setParams({'cat':categoryId});",
+                    "Articls_cate.load();",
+                    "",
+                    "var Articles= Ext.create('AR.view.article.List',{store:Articls_cate,title:categorytitle,localArticleView : true});",
+                    "this.getAppnav().push(Articles); */",
+                    "",
+                    "this.getApplication().getController('Main').showArticlesOfCategory(record.getData().id);"
+                ],
+                "name": "itemtap"
+            },
+            "designerId": "fc4a6613-9d91-41f8-90b7-37c48e823ac6"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "categoryview",
+                "selector": "categoryIconView"
+            },
+            "designerId": "6ef7fe15-aeb4-48e4-9090-79e2f4f5ad77"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js5",
+        "url": "resources/data/GetHirerchyCategories.php"
+    },
+    "designerId": "1aa0dac4-42a0-4fd7-9ccf-e67653b37233"
+}

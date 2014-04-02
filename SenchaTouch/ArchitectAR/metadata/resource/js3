@@ -1,0 +1,13 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js3",
+        "url": "app/locale/Labels.js"
+    },
+    "designerId": "c898c245-3800-470d-8974-483c14c87dbd"
+}

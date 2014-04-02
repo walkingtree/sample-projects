@@ -1,0 +1,48 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "Category",
+        "model": "Category",
+        "storeId": "CategoryStore"
+    },
+    "designerId": "d3b47d41-d5d9-432b-9a4c-ba8c61934e67",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "    read:AR.util.Utility.api.allcategories ",
+                    "    ",
+                    "}"
+                ]
+            },
+            "designerId": "71fbe931-4b3f-4ca4-8cca-664cdd88e556",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "categories"
+                    },
+                    "designerId": "b463df26-53c1-47b7-9560-b163ba812bc7"
+                }
+            ]
+        }
+    ]
+}

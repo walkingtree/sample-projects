@@ -1,0 +1,20 @@
+
+$font-files:
+         url('../resources/sass/stylesheets/fonts/fonts/wtcar.woff') format("woff"),
+         url('../resources/sass/stylesheets/fonts/fonts/wtcar.ttf') format("truetype"),
+         url('../resources/sass/stylesheets/fonts/fonts/wtcar.svg') format("svg");
+
+@include icon-font('wtcar', $font-files);
+
+@include icon("menu"  , 	"\e600",	"wtcar");
+@include icon("category"  , 	"\e601",	"wtcar");
+@include icon("users"  , 	"\e602",	"wtcar");
+@include icon("articles"  ,	"\e604",	"wtcar");
+@include icon("settings2"  ,	"\e605",	"wtcar");
+@include icon("save"  ,		"\e606",	"wtcar");
+@include icon("about"  ,	"\e603",	"wtcar");
+
+
+.menu{
+   top: -2px;
+}

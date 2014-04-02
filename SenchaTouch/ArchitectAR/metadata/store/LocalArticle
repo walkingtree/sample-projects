@@ -1,0 +1,63 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "LocalArticle",
+        "model": "ArticleLocal",
+        "storeId": "articleLocalStore"
+    },
+    "designerId": "2ac800f5-fd95-4c52-9d48-0d95128c8871",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.LocalStorage",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "localArticles"
+            },
+            "designerId": "0045b6d7-ff94-482f-9868-de203a4e9547"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStoreBeforeLoad",
+                "implHandler": [
+                    " var loadingMaskText = AR.locale.Labels.LOADINGMASK_TEXT;",
+                    "//Ext.Viewport.mask({ xtype: 'loadmask',message: loadingMaskText, indicator:true });"
+                ],
+                "name": "beforeload"
+            },
+            "designerId": "6ba012cf-854b-44e3-980b-9fac696bf8c1"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStoreLoad",
+                "implHandler": [
+                    "",
+                    "Ext.Viewport.unmask();"
+                ],
+                "name": "load"
+            },
+            "designerId": "ce2bec3c-30e3-4252-bde6-20cfc4920c43"
+        }
+    ]
+}

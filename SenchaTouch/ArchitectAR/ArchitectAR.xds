@@ -1,0 +1,99 @@
+{
+    "name": "ArchitectAR",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "4.0.1.45",
+            "frameworkVersion": "2.3.0.328"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "iPhone 5",
+                "builtIn": true,
+                "height": 568,
+                "width": 320
+            },
+            "viewportOrientation": "portrait"
+        },
+        "urlPrefix": "http://localhost/ArchitectAR/",
+        "exportPath": "/var/www/html/ArchitectPAR",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app"
+        }
+    },
+    "xdsVersion": "3.0.0",
+    "xdsBuild": 1337,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000003,
+    "framework": "touch23",
+    "viewOrderMap": {
+        "view": [
+            "304bfe6f-a1e2-43fd-af41-1808e98de1fb",
+            "f9d625a1-d41c-4a4d-927c-a6dab85966ce",
+            "93434fb9-2ab6-43b6-b46a-19d36b62ead8",
+            "d385dbd2-a0c0-4db2-9886-dd1ae47b6f5f",
+            "508fb1d6-35b6-464c-a145-542736b098e2",
+            "fb35c4d0-00e6-4f56-aa99-a721063bdaac",
+            "7053f226-c94f-46b5-965f-fc77b49243b0",
+            "a4cd1999-5623-4e2f-bc48-733357a3efaf",
+            "4325524c-a4b1-4c88-bce3-1970903ea74a",
+            "913fb33d-d939-4df6-a8ed-7f0da09e284b"
+        ],
+        "store": [
+            "25993035-c9c9-49ae-947d-0a0de9f3a519",
+            "d3b47d41-d5d9-432b-9a4c-ba8c61934e67",
+            "c2d7bf0c-4b60-4f90-b95a-dfc1a02a8fe5",
+            "8afc2d09-8893-43cd-aa74-18353a27c056",
+            "b33f2666-9b5e-45bc-b515-27a10e47ac27",
+            "2ac800f5-fd95-4c52-9d48-0d95128c8871"
+        ],
+        "controller": [
+            "ec6eec27-778e-4bd0-a54e-3eed163bd989",
+            "a461ef51-2bbe-425c-ae91-45a272781695",
+            "e6fe1a5d-16d8-4c30-9e09-a971666c5163",
+            "5053bd62-2ce1-40c0-9deb-b0d0c237f233"
+        ],
+        "model": [
+            "66ccb4b0-f323-4902-9c6b-a32d1eb3738a",
+            "db16c5e3-84b6-4522-a55b-653b93d3bfae",
+            "6d754e90-d7eb-4c4a-a5c1-18e4ba6107a9",
+            "9a621783-f05e-4386-acd0-57da330cb356",
+            "c81daed5-dcf0-4a98-9e06-0251acd57d61",
+            "7525f2b1-fdd3-4fac-830f-37bd43782cbf"
+        ],
+        "resource": [
+            "70760bbc-9363-4de6-bb8d-935eb11d0b3e",
+            "79e92db8-6759-4d06-a59d-a7f14ba0cf0a",
+            "48131af4-8c7a-4116-9253-3484804762a3",
+            "c2fe0225-daf4-499d-8063-2d422702934b",
+            "c898c245-3800-470d-8974-483c14c87dbd",
+            "f1cd9acc-7cbe-4be5-a49b-0ec6e5dcc37d",
+            "9958b41e-f394-49b8-838d-127e3c916edf",
+            "e37ff6e9-d9fa-4d3c-9729-718a4fd904ef",
+            "07c11e6d-c2a8-48a8-8ccf-f4efbc6c1622",
+            "dedce81f-dc22-4ef8-978b-78c1e0777cc1",
+            "8325e41c-a782-4b91-a3a9-8d0c865dd164",
+            "82bc1698-41de-4f45-9a65-741dc86ebce1",
+            "1aa0dac4-42a0-4fd7-9ccf-e67653b37233",
+            "1069f7b1-f764-4f0d-ba37-e1096df8b7c5",
+            "1eb5d50c-9f3f-44c3-b2c6-4e909b1f523d",
+            "da9c116d-b198-4c39-96ed-7163fc6e27fa",
+            "64cfaeca-fc44-402d-8a76-64f78bd4a50d",
+            "7667e007-6301-48b0-b8db-5414845a9ebf",
+            "319a440f-8cd7-4758-a62f-0f816d83083d",
+            "3cab4475-2c89-4926-a195-cc4100f6aa55",
+            "de0dd75f-57a4-4649-bdc6-1f4b2424aa3b"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

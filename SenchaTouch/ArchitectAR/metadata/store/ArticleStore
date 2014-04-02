@@ -1,0 +1,111 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "AR.store.ArticleStore",
+        "designer|userClassName": "ArticleStore",
+        "model": "Article",
+        "requires": [
+            "AR.util.Utility"
+        ],
+        "storeId": "articleStore"
+    },
+    "designerId": "25993035-c9c9-49ae-947d-0a0de9f3a519",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{",
+                    "    ",
+                    "    read:AR.util.Utility.api.allPosts   ",
+                    "    ",
+                    "}"
+                ],
+                "extraParams": [
+                    "{",
+                    "    ",
+                    "    count:10",
+                    "}"
+                ],
+                "url": ""
+            },
+            "configAlternates": {
+                "sss": "number"
+            },
+            "designerId": "0c180982-e1c8-4853-ad79-0c61f48c9f0c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "posts"
+                    },
+                    "designerId": "ba4e85dd-1d17-4ce5-b870-f703ad4cd18a"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonpstoreBeforeLoad",
+                "implHandler": [
+                    " var loadingMaskText = AR.locale.Labels.LOADINGMASK_TEXT;",
+                    " Ext.Viewport.mask({ xtype: 'loadmask',message: loadingMaskText, indicator:true });",
+                    "",
+                    "",
+                    "if(store.getAutoLoad()){",
+                    "               var settinglocalstore= Ext.data.StoreManager.lookup('settingStore');",
+                    "               settinglocalstore.load();",
+                    "",
+                    "               if(settinglocalstore.getCount() >=1 ){",
+                    "\t\t\t\tvar datasettings=settinglocalstore.getData().all[0].data;",
+                    "",
+                    "\t\t\t\tif(datasettings.pageSize == 0){",
+                    "\t\t\t\t\tdatasettings.pageSize = 5;",
+                    "\t\t\t\t}",
+                    "\t\t\t\tstore.getProxy().setExtraParams({'count':datasettings.pageSize});",
+                    "",
+                    "\t}",
+                    "}"
+                ],
+                "name": "beforeload"
+            },
+            "designerId": "381751f9-3223-4a4f-806a-d956268641b6"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonpstoreLoad",
+                "implHandler": [
+                    "Ext.Viewport.unmask();"
+                ],
+                "name": "load"
+            },
+            "designerId": "7454a61f-2577-4a55-bd9f-2938252e7e30"
+        }
+    ]
+}
