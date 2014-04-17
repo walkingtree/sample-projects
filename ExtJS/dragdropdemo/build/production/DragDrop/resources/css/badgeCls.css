@@ -1,0 +1,139 @@
+.x-btn-badgeCls{
+
+	top: 0.25em;
+	right:0.3em;
+	text-align: center;
+	font-family: tahoma,arial,verdana,sans-serif;
+	padding: 0.2em;
+	z-index: 12;
+	color: white;
+	position: absolute;
+	width: auto;
+	min-width: 1.7em;
+	line-height: 1.2em;
+	font-size: 7pt;	
+	max-width: 95%;
+	background-color: #C41230;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #C41230), color-stop(3%, #C41230), color-stop(100%, #cd4e0e));
+	background-image: -webkit-linear-gradient(top, #C41230,#C41230 3%,#C41230);
+	background-image: linear-gradient(top, #C41230,#C41230 3%,#C41230);
+	display: inline-block;
+		
+}
+
+/**
+*	icon Align top styling - starts here
+*/
+
+.x-btn-stelmmdark-mini.x-icon-text-top {
+	
+	width : 40px;
+	height: 40px;
+}
+
+.x-btn-stelmmdark-small.x-icon-text-top {
+	
+	width: 60px;
+	height: 60px;
+}
+
+.x-btn-stelmmdark-medium.x-icon-text-top {
+	
+	width: 80px;
+	height: 80px;
+}
+
+.x-btn-stelmmdark-large.x-icon-text-top {
+	
+	width: 100px;
+	height: 100px;
+}
+
+.x-btn-stelmmdark-extralarge.x-icon-text-top {
+	
+	width: 120px;
+	height: 120px;
+}
+
+
+
+.x-btn-stelmm-mini.x-icon-text-top {
+	
+	width : 40px;
+	height: 40px;
+}
+
+.x-btn-stelmm-small.x-icon-text-top {
+	
+	width: 60px;
+	height: 60px;
+}
+
+.x-btn-stelmm-medium.x-icon-text-top {
+	
+	width: 80px;
+	height: 80px;
+}
+
+.x-btn-stelmm-large.x-icon-text-top {
+	
+	width: 100px;
+	height: 100px;
+}
+
+.x-btn-stelmm-extralarge.x-icon-text-top {
+	
+	width: 120px;
+	height: 120px;
+}
+.x-btn-stelmmdark-medium .x-btn-badgeCls {
+	right : 0px !important;
+}
+/**
+*	icon Align top styling - ends here
+*/
+
+/*.moremenu-toolbar-cls .x-btn-badgeCls {
+
+	right: 0.5em;
+}*/
+.x-btn-pointerCls{
+	
+	position: absolute;
+	height: 0px !important;
+	width: 0px !important;
+	top:8px !important;
+	right: 16px;
+	border-top: 4px solid transparent;
+	border-right: 4px solid #ffa500;
+	border-bottom: 4px solid transparent;
+	display : none;
+}
+
+.has-badge{
+height:22px ;
+line-height:22px;
+overflow: visible !important;
+}
+
+.has-badge .x-btn-inner{
+	padding:0.2em;
+/* 	padding-left: 20px; */
+	}
+	
+	.test{
+	background-image:'3.png';
+}
+
+
+.hide-badge{
+	visibility : hidden;
+}
+
+/*.x-frame-mc.x-btn-mc{*/
+/*overflow:visible !important;*/
+/*}*/
+/**/
+ .x-frame-mc .x-btn-mc{
+ overflow:visible! important;
+  }
