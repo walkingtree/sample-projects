@@ -250,13 +250,21 @@ Ext.define('CustomSenchaCharts.sprite.WilliamPctR', {
         var linedash;
         if (dashed) {
             linedash = ctx.getLineDash();
-            ctx.setLineDash([3]);
+            if (ctx.setLineDash) {
+                ctx.setLineDash([3]);
+            } else {
+                ctx.lineDash = [3];
+            }
         }
         ctx.stroke();
 
         //reset the dash style
         if (dashed) {
-            ctx.setLineDash(linedash);
+            if (ctx.setLineDash) {
+                ctx.setLineDash(linedash);
+            } else {
+                ctx.lineDash = linedash;
+            }
         }
     }
 });
