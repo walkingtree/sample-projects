@@ -1,0 +1,150 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Author"
+    },
+    "name": "MyModel",
+    "designerId": "442f7207-be3c-4191-a3e9-8812c1698e1d",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "name": "MyField",
+            "designerId": "883295b6-f970-4760-8f5d-9bad8e5e036f"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "first_name"
+            },
+            "name": "MyField1",
+            "designerId": "55f9a4a2-b2a3-4489-b1e7-8288db17c490"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "last_name"
+            },
+            "name": "MyField2",
+            "designerId": "98ac8453-125f-4179-8665-7176b1e53a76"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nickname"
+            },
+            "name": "MyField3",
+            "designerId": "3f96a096-a5ba-4da4-8595-20c08156d402"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "email"
+            },
+            "name": "MyField4",
+            "designerId": "48abf4cf-f038-4cae-af95-5a69079b7f24"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "full_name"
+            },
+            "name": "MyField9",
+            "designerId": "932252dd-ab61-4eb2-bae3-ffce430465fc",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "fn": "convert",
+                        "implHandler": [
+                            "return rec.get('first_name') + ' ' + rec.get('last_name');"
+                        ]
+                    },
+                    "name": "convert",
+                    "designerId": "e763f3b8-dd2d-4d96-9cff-eb09b2f32292"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "gavtar_url"
+            },
+            "name": "MyField10",
+            "designerId": "70e24ece-47dd-4b90-85a5-ff192a4e3f09",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "v",
+                            "rec"
+                        ],
+                        "fn": "convert",
+                        "implHandler": [
+                            "return 'http://www.gravatar.com/avatar/' + rec.get('email');"
+                        ]
+                    },
+                    "name": "convert",
+                    "designerId": "8d6e3b2e-3adb-4f2c-81a0-ac3e926ae7f4"
+                }
+            ]
+        }
+    ]
+}

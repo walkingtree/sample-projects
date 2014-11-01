@@ -1,0 +1,123 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "collapsible": true,
+        "columnLines": false,
+        "designer|userAlias": "authorsgrid",
+        "designer|userClassName": "AuthorsGridPanel",
+        "hideHeaders": true,
+        "publishes": [
+            "[\"selection\"]",
+            ""
+        ],
+        "store": "Authors",
+        "title": "Authors",
+        "width": 230
+    },
+    "name": "MyGridPanel1",
+    "designerId": "11e0acb8-4fda-4ed4-8055-3d40bed7d3a9",
+    "viewControllerInstanceId": "52ea57d3-396e-4bd3-9719-f72bc54afd78",
+    "viewModelInstanceId": "f7481614-0aa9-463b-afdd-fe140f115735",
+    "cn": [
+        {
+            "type": "Ext.grid.View",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyGridView1",
+            "designerId": "00cbb88b-ba6e-43d0-b0e1-3ae1eedbb225"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "gavtar_url",
+                "text": null,
+                "width": 50
+            },
+            "name": "MyColumn2",
+            "designerId": "75c4df2b-4db3-479a-adf3-5b46d2b9db75",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return '<img src=\"' + value + '?s=40\"></img>';"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "489e1bb3-994e-4d2c-bbc8-21c90ec49031"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "full_name",
+                "flex": 1,
+                "text": "Author"
+            },
+            "name": "MyColumn7",
+            "designerId": "582161f1-25bf-4a06-b2f4-34328d66d15a",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "metaData.style = 'font-size:1.2em;padding-top:20px;color:#495E88;';",
+                            "return value;"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "d19a9205-8b60-4090-b2b0-20d9725e0364"
+                }
+            ]
+        }
+    ]
+}

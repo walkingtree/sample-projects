@@ -1,0 +1,125 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "activeTab": 0,
+        "article": null,
+        "author": [
+            "null"
+        ],
+        "bodyPadding": null,
+        "designer|userAlias": "centertabpanel",
+        "designer|userClassName": "CenterTabPanel",
+        "publishes": null,
+        "reference": null,
+        "title": null
+    },
+    "name": "MyTabPanel",
+    "configAlternates": {
+        "article": "object",
+        "author": "object"
+    },
+    "designerId": "a728b9ef-1a1c-477e-80e3-f3b281cef19c",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "article",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "author",
+            "type": "string"
+        }
+    ],
+    "viewControllerInstanceId": "1f88bb57-c4ac-4c60-8beb-8fc203b64ebe",
+    "viewModelInstanceId": "8677d8ac-5909-49e3-94d3-a51a8c10845e",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "reference": "recentarticles",
+                "title": [
+                    "{tabtitle}"
+                ]
+            },
+            "name": "articlesgridpanel",
+            "configAlternates": {
+                "title": "binding"
+            },
+            "designerId": "75bc6c1b-07fc-48e0-bf21-81385b54d1ef",
+            "masterInstanceId": "466f147a-b0b6-4b76-83cc-f7318902fe11",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "TabConfig3",
+                    "designerId": "0b4b7b30-4157-470e-a622-2c7d7481f3d0"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelSelect",
+                        "implHandler": [
+                            "var tab = this.getView().add({",
+                            "    title: record.get('title'),",
+                            "    closable: true,",
+                            "    html: record.get('content'),",
+                            "    bodyPadding: 10,",
+                            "    autoScroll: true",
+                            "});",
+                            "",
+                            "this.getView().setActiveTab(tab);"
+                        ],
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "name": "onGridpanelSelect",
+                    "designerId": "786179df-8792-4da4-a790-ac91ab9d52cf"
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "newVal",
+                    "oldVal"
+                ],
+                "fn": "updateAuthor",
+                "implHandler": [
+                    "//set the Recent Arcticles tab title for the selected author",
+                    "this.getViewModel().setAuthor(newVal);",
+                    "",
+                    "//load author posts",
+                    "this.lookupReference('recentarticles').setAuthor(newVal);"
+                ]
+            },
+            "name": "updateAuthor",
+            "designerId": "52cf4785-8211-4010-bb2f-05235c328574"
+        }
+    ]
+}

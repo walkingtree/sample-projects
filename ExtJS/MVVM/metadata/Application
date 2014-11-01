@@ -1,0 +1,27 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "Author",
+            "Article"
+        ],
+        "name": "MyApp",
+        "stores": [
+            "Authors",
+            "Articles"
+        ],
+        "views": [
+            "MyViewport",
+            "AuthorsGridPanel",
+            "ArticlesGridPanel",
+            "CenterTabPanel"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}

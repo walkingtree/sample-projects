@@ -1,0 +1,92 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "author": [
+            "null"
+        ],
+        "data": [
+            "{",
+            "    author: null",
+            "}"
+        ],
+        "designer|userAlias": "centertabpanel",
+        "designer|userClassName": "CenterTabPanelViewModel"
+    },
+    "configAlternates": {
+        "author": "object"
+    },
+    "designerId": "8677d8ac-5909-49e3-94d3-a51a8c10845e",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "author",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.app.bind.Formula",
+            "reference": {
+                "name": "formulas",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bind": "{author}",
+                "name": "tabtitle"
+            },
+            "name": "MyFormula",
+            "designerId": "f8d3666d-729d-4b9d-bdba-a43581b2c179",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "data"
+                        ],
+                        "fn": "get",
+                        "implHandler": [
+                            "if (!data) {",
+                            "    return 'Recent Articles';",
+                            "}",
+                            "",
+                            "return 'Recent Articles By - ' + data;"
+                        ]
+                    },
+                    "name": "get",
+                    "designerId": "e5768b2b-2007-49b2-89af-482b1c9a7d70"
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "newVal",
+                    "oldVal"
+                ],
+                "fn": "updateAuthor",
+                "implHandler": [
+                    "this.setData({author: newVal.get('full_name')});"
+                ]
+            },
+            "name": "updateAuthor",
+            "designerId": "994d49c3-9569-4453-95f8-f4d438a1118a"
+        }
+    ]
+}

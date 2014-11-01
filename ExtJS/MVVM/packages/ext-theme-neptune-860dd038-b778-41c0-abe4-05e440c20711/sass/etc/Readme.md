@@ -1,0 +1,4 @@
+# ext-theme-neptune-860dd038-b778-41c0-abe4-05e440c20711/sass/etc
+
+This folder contains miscellaneous SASS files. Unlike `"ext-theme-neptune-860dd038-b778-41c0-abe4-05e440c20711/sass/etc"`, these files
+need to be used explicitly.

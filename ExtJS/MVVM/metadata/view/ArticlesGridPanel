@@ -1,0 +1,111 @@
+{
+    "type": "Ext.grid.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "author": [
+            "null"
+        ],
+        "designer|userAlias": "articlesgrid",
+        "designer|userClassName": "ArticlesGridPanel",
+        "hideHeaders": true,
+        "publishes": [
+            "[\"selection\"]",
+            ""
+        ],
+        "store": "Articles",
+        "title": null
+    },
+    "name": "MyGridPanel",
+    "configAlternates": {
+        "selectedArticle": "object",
+        "author": "object"
+    },
+    "designerId": "466f147a-b0b6-4b76-83cc-f7318902fe11",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "author",
+            "type": "string"
+        }
+    ],
+    "viewControllerInstanceId": "e763ffdb-ac4e-4af6-b4ed-8398ee4295b8",
+    "viewModelInstanceId": "3b059347-66a1-4b5d-96de-a17c98c86292",
+    "cn": [
+        {
+            "type": "Ext.grid.View",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyGridView",
+            "designerId": "bfac491f-af57-4d77-bf19-7e6fe8236078"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "title",
+                "flex": 1,
+                "text": "Title"
+            },
+            "name": "MyColumn1",
+            "designerId": "1fbdd8d4-5eef-4f16-8973-81f0194ab9dc",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return '<h2 style=\"color:#64BD4F;\">' + value + '</h2>' + 'Published By <span style=\"font-size:1.3em;color:#7495AB;\">' + record.get('author') + '</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Published On <span style=\"font-size:1.3em;color:#7495AB;\">' + record.get('date') + '</span>';"
+                        ]
+                    },
+                    "name": "renderer",
+                    "designerId": "78b217fd-287d-4c0e-99ba-1f788c99265a"
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "newVal",
+                    "oldVal"
+                ],
+                "fn": "updateAuthor",
+                "implHandler": [
+                    "this.getStore().load({url: 'http://touchdemo.walkingtree.in/Training/?json=get_posts&author='+ newVal.get('id') + '&count=20'});"
+                ]
+            },
+            "name": "updateAuthor",
+            "designerId": "a80918a5-6191-40e9-9742-ff16679410d2"
+        }
+    ]
+}

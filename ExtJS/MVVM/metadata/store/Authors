@@ -1,0 +1,47 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "Authors",
+        "model": "Author",
+        "storeId": "Authors"
+    },
+    "name": "MyStore",
+    "designerId": "c9ff3f12-c252-4563-bf01-df0c0fab04be",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "http://touchdemo.walkingtree.in/Training/?json=get_author_index&author_meta=email"
+            },
+            "name": "MyJsonPProxy",
+            "designerId": "388e89c3-144c-4ad0-807c-724b8a426a64",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "record": null,
+                        "rootProperty": "authors"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "90599d86-7fde-436f-ab09-1cc48b894ab1"
+                }
+            ]
+        }
+    ]
+}

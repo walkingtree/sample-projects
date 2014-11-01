@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "mygridpanel12",
+        "designer|userClassName": "AuthorsGridPanelViewModel"
+    },
+    "designerId": "f7481614-0aa9-463b-afdd-fe140f115735"
+}

@@ -1,0 +1,73 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "myviewport",
+        "designer|userClassName": "MyViewport",
+        "layout": "border"
+    },
+    "name": "MyViewport",
+    "designerId": "162e83e3-f1a0-442f-b8f7-8c04682c327e",
+    "viewControllerInstanceId": "327ed4b4-b5fa-4f63-89e4-7df99354ef22",
+    "viewModelInstanceId": "6675806a-7fde-4519-a094-83204ef96da6",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "west",
+                "layout|split": true,
+                "layout|splitterResize": false,
+                "reference": "authorsgrid",
+                "width": 230
+            },
+            "name": "authorsgridpanel",
+            "designerId": "a554c7c5-d413-4d2e-8f0a-138584f3fe0d",
+            "masterInstanceId": "11e0acb8-4fda-4ed4-8055-3d40bed7d3a9",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelSelect",
+                        "implHandler": [
+                            "this.lookupReference('centertabpanel').setAuthor(record);"
+                        ],
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "name": "onGridpanelSelect",
+                    "designerId": "06fbb88d-f317-4139-8a1e-71b231f10570"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "reference": "centertabpanel"
+            },
+            "name": "centertabpanel",
+            "designerId": "9cd7bc93-27dc-4e34-9a0a-b6907bbc56d0",
+            "masterInstanceId": "a728b9ef-1a1c-477e-80e3-f3b281cef19c"
+        }
+    ]
+}

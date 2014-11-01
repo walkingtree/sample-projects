@@ -1,0 +1,65 @@
+{
+    "name": "MVVM",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "5.0.2.250",
+            "frameworkVersion": "5.0.1"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "http://localhost:1841",
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "projectHasEnabledWebServer": true
+    },
+    "xdsVersion": "3.1.0",
+    "xdsBuild": 1851,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000007,
+    "framework": "ext50",
+    "viewOrderMap": {
+        "view": [
+            "162e83e3-f1a0-442f-b8f7-8c04682c327e",
+            "6675806a-7fde-4519-a094-83204ef96da6",
+            "327ed4b4-b5fa-4f63-89e4-7df99354ef22",
+            "11e0acb8-4fda-4ed4-8055-3d40bed7d3a9",
+            "f7481614-0aa9-463b-afdd-fe140f115735",
+            "52ea57d3-396e-4bd3-9719-f72bc54afd78",
+            "466f147a-b0b6-4b76-83cc-f7318902fe11",
+            "3b059347-66a1-4b5d-96de-a17c98c86292",
+            "e763ffdb-ac4e-4af6-b4ed-8398ee4295b8",
+            "a728b9ef-1a1c-477e-80e3-f3b281cef19c",
+            "8677d8ac-5909-49e3-94d3-a51a8c10845e",
+            "1f88bb57-c4ac-4c60-8beb-8fc203b64ebe"
+        ],
+        "store": [
+            "c9ff3f12-c252-4563-bf01-df0c0fab04be",
+            "d036a5d5-f892-470c-9153-724952e5eff2"
+        ],
+        "controller": [],
+        "model": [
+            "442f7207-be3c-4191-a3e9-8812c1698e1d",
+            "d3006d88-5fb9-4b90-a6e3-786f79633768"
+        ],
+        "resource": [
+            "9b30089a-ab16-44fb-8162-f5bb23e77458",
+            "860dd038-b778-41c0-abe4-05e440c20711"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

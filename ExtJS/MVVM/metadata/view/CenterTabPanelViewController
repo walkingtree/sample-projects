@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "centertabpanel",
+        "designer|userClassName": "CenterTabPanelViewController"
+    },
+    "designerId": "1f88bb57-c4ac-4c60-8beb-8fc203b64ebe"
+}
