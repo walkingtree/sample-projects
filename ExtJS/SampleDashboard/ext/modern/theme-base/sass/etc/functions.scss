@@ -1,0 +1,45 @@
+@function get-resource-path($path, $nocheck: false) {
+  $path: file_join($relative-image-path-for-uis, $path);
+  $ret: none;
+
+  @if $path {
+    @if $nocheck {
+      $ret: $path;
+    } @else if file_exists($image-search-path, $path) {
+      $ret: $path;
+    } @else {
+      @warn "@get-resource-path: Resource not found: #{$path}";
+      @if $include-missing-images {
+        $ret: $path;
+      }
+    }
+
+    @if $ret != none {
+      $ret: file_join($theme-resource-path, $path);
+    }
+  } @else {
+    @warn "@get-resource-path: No arguments passed";
+  }
+
+  @return $ret;
+}
+
+@function get-url($path, $nocheck: false) {
+  $ret: get-resource-path($path, $nocheck);
+
+  @if $ret != none {
+    @return url($ret);
+  }
+
+  @return $ret;
+}
+
+@function get-image-url($path, $extension: $image-extension, $nocheck: false) {
+  $ret: get-resource-path($path + '.' + $extension, $nocheck);
+
+  @if $ret != none {
+    @return url($ret);
+  }
+
+  @return $ret;
+}

@@ -1,0 +1,8 @@
+.#{$prefix}grid-row-expander {
+    font-size: 0;
+    line-height: 0;
+}
+
+.#{$prefix}grid-row-expander:focus {
+    outline: $grid-row-cell-focus-border-width $grid-row-cell-focus-border-style $grid-row-cell-focus-border-color;
+}
