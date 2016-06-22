@@ -1,0 +1,17 @@
+{
+  "name": "adempiere-node",
+  "version": "1.0.0",
+  "description": "Node program to consume adempiere soap services",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "adempiere-soap-node"
+  ],
+  "author": "Phani Kiran",
+  "license": "ISC",
+  "dependencies":{
+	"soap":"^0.15.0"
+}
+}
