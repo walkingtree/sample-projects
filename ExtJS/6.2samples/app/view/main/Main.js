@@ -12,7 +12,7 @@ Ext.define('EA.view.main.Main', {
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
-
+        'Ext.d3.hierarchy.TreeMap',
         'EA.view.main.MainController',
         'EA.view.main.MainModel',
         'EA.view.main.List'
@@ -153,10 +153,63 @@ Ext.define('EA.view.main.Main', {
           }
         }]
     }, {
-        title: 'Settings',
+        title: 'Tree Map',
         iconCls: 'fa-cog',
-        bind: {
-            html: '{loremIpsum}'
-        }
+        layout:'fit',
+        dockedItems:[
+          {
+            xtype:'segmentedbutton',
+            dock:'top',
+            items:[
+              {
+                text:"Size"
+              },{
+                text:"Count",
+                pressed:true
+              }
+            ],
+            listeners:{
+              toggle:'onToggleSize'
+            }
+          }
+        ],
+        items:[
+
+          {
+            xtype:'d3-treemap',
+            reference:'treemap',
+            bind:{
+              store:'{treemap}'
+            },
+            rootVisible: true,
+            tooltip:{
+              renderer:function(tooltip,node,element){
+                tooltip.setHtml( node.data.name);
+              }
+            },
+            colorAxis:{
+              scale:{
+                type:'linear',
+                range:['#FFC300','#571845']
+              },
+              minimum:0,
+              maximum:16540,
+              field: 'size',
+              processor:function (axis, scale, node, field) {
+                  debugger;
+                    return Ext.isEmpty(node.data[field]) ?  '#D3D3C2' : scale(node.data[field]);
+                }
+            },
+            listeners:{
+              select:function(map,node){
+                alert('Selected ' + node.data.name + 'Node');
+              },
+              deselect:function(map,node){
+                alert( ' Deselected '+ node.data.name +' Node ');
+              }
+            }
+
+          }
+        ]
     }]
 });

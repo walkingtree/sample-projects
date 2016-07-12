@@ -31,6 +31,18 @@ Ext.define('EA.view.main.MainModel', {
                 rootProperty: 'items'
             }
         }
+      },
+      treemap:{
+        type:'tree',
+        nodeValue:function(data){
+          return data.size;
+        },
+        
+        autoLoad:true,
+        proxy:{
+          type:'ajax',
+          url:'./resources/data/treemap.json'
+        }
       }
     }
 

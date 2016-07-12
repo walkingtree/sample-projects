@@ -17,5 +17,15 @@ Ext.define('EA.view.main.MainController', {
         if (choice === 'yes') {
             //
         }
-    }
+    },
+
+    onToggleSize: function (segmentedButton, button, pressed) {
+       var treemap = this.lookupReference('treemap'),
+           value = button.text;
+
+       treemap.setNodeValue(value === "Count" ? 'count' : this.getSize);
+   },
+   getSize:function(node){
+     return node.get('size');
+   }
 });
