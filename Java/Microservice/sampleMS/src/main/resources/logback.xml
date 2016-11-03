@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property scope="context" name="logger.type" value="samplems" />
+	<include resource="org/springframework/boot/logging/logback/defaults.xml" />
+	<jmxConfigurator />
+	<appender name="samplems" class="ch.qos.logback.core.rolling.RollingFileAppender">
+<!-- 		<Encoding>UTF-8</Encoding> -->
+		<File>./logs/samplems.log</File>
+		 <encoder>
+			<pattern>%d ${logger.type} %p %m%n</pattern>
+		</encoder> 
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<maxIndex>10</maxIndex>
+			<FileNamePattern>./logs/samplems.log.%i</FileNamePattern>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>1MB</MaxFileSize>
+		</triggeringPolicy>
+	</appender>
+ 	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d ${logger.type} %p %m%n</pattern>
+			<charset>utf8</charset>
+		</encoder>
+	</appender>  
+	<root level="info">
+		<appender-ref ref="samplems" />
+		<appender-ref ref="CONSOLE" />
+	</root>
+</configuration>
