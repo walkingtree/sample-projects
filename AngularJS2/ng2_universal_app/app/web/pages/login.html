@@ -1,0 +1,56 @@
+<div class="loginContainerDiv">
+    <div class="ui two column middle aligned very relaxed stackable grid">
+        <div class="left aligned column">
+            <div class="leftTextAlign">
+                <div>
+                    <div class="textDevHeight welcomeText">WELCOME TO</div>
+                    <div class="textThemeColoRed textDevHeight">UNIVERSAL APP</div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <form class="ui form loginFormDiv">
+                <div class="littleTaleImgDiv"> 
+                    <img class="littleTaleImg" src="img/login-Screen.JPG">
+                </div>
+                <div class="field uname">
+                    <div class="ui transparent input">
+                        <input [(ngModel)]="_userName" name = "username" type="email" placeholder="Email address">
+                    </div>
+                </div>	  
+                <div class="field pword">
+                    <div class="ui transparent input">
+                        <input [(ngModel)]="_password" type="password" name = "password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="forgotPword">
+                    <label (click)="forgotPasswrd()">Forgot password ?</label>
+                </div>
+                <div class="loginDiv">
+                    <div (click)="login()" class="ui black submit button loginBtn">Login</div>
+                </div>
+                <div class="ui horizontal divider horizontalDevider">
+                    Or
+                </div>
+                <div style = "text-align:center;">
+                    <div class="ui facebook button" >
+                          <ion-icon name="logo-facebook"></ion-icon>
+                          Continue using facebook
+                    </div>
+                </div>
+                <div class="registerDiv">
+                    <label (click)="register()">Register</label>
+                </div>
+            </form>      
+        </div>
+    </div>
+</div>
+<div id="loginModel" class="ui small modal">
+  <div class="header">Info</div>
+  <div class="content">
+    <p>{{msg}}</p>
+  </div>
+  <div class="actions">
+    <div class="ui ok button">Ok</div>
+  </div>
+</div>

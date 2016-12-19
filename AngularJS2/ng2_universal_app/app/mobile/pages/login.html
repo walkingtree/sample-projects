@@ -1,0 +1,26 @@
+<ion-content style="padding:0px;">
+    <div class="header">
+     <img src="img/logo.JPG" style="margin-top:50px;">   
+    </div><br/><br/>
+    <!--login inputs-->
+    <ion-item class="user" center>
+        <ion-input type="email" placeholder = "Email address" [(ngModel)]="_userName"></ion-input>
+    </ion-item>
+
+    <ion-item class="input">
+        <ion-input type = "password" placeholder="Password" [(ngModel)] = "_password"></ion-input>
+    </ion-item>
+    <div class="fgttxt">
+        <span class="forgotTxt" (click)="forgotPassword($event)">Forgot Password?</span><br/>
+    </div>
+    <div class="forgot">
+        <button class="register" (click)="login()" dark><b>Login</b></button>
+          <br/>
+       
+        <div class="line"><span class="or">or</span></div><br/>
+        <a href = "fb://profile/655146487898613"><img src="img/Fb.png" class="fbIcon"></a><br/><br/>
+        <span class="skip" (click)="registerPage($event)">Register</span>
+    </div>
+    <div class="login2">       
+    </div>
+</ion-content>

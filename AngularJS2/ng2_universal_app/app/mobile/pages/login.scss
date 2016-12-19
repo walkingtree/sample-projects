@@ -1,0 +1,173 @@
+.login {
+	padding-top:10px;
+	text-align:center;
+	background:white;
+	font-size:16px;
+}
+
+.header {
+	text-align:center;
+	
+}
+
+.logo {
+	height:80px;
+	width:100px;
+	
+}
+
+.user {
+	width:80%;
+	left:10%;
+	right:10%;
+	margin-top:6%;
+}
+
+.input {
+	width:80%;
+	left:10%;
+	right:10%;
+}
+
+.register {
+   margin-top: 10px;
+   width: 40%;
+   height: 45px;
+   border: 1px solid #021A1D;
+   border-radius: 6px;
+}
+
+.forgot {
+    margin-top:10px;
+	text-align:center;
+}
+
+.forgotTxt {
+	text-decoration:none;
+	color:#999999;
+}
+.line{
+    margin-left:25%;
+    margin-right:25%;
+    margin-top:10px;
+    width: 50%;
+    height: 10px;
+    border-bottom: 0.1px solid #C8C7CC;
+    text-align: center;
+}
+.or{
+    font-size: 15px;
+    background-color: #F3F5F6;
+    padding: 0 5px;
+    color:#999999;
+}
+.login2 {
+	text-align:center;	
+}
+
+.facebook {
+    margin-top:10px;
+    width:70%;
+    background:#425F9C;
+}
+
+.fbIcon{
+        width:60%;
+}
+.fgttxt{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top:10px;
+    width: 70%;
+}
+.skip {
+	color:#ff4d4d;
+    font-size:15px;
+	text-align:center;
+	padding-bottom:10px;
+}
+.image2{
+   margin-bottom:15px;
+   text-align : center;
+}
+.footer {
+	background:white;
+        positoin:fixed;
+        bottom:0;
+}
+
+
+.loginContainerDiv{
+    margin-top:244px !important;
+}
+.leftTextAlign {
+    margin-left: 30% !important;
+}
+.littleTaleImgDiv{
+    width:150px;
+    margin:0 auto !important;
+    margin-top:35px !important;
+}
+.forgotPword{
+    width:120px;
+    margin:0 auto !important;
+    padding-bottom: 15px;
+}
+.forgotPword label{
+    cursor: pointer;
+}
+.registerDiv{
+    width:55px;
+    margin:0 auto !important;
+    padding: 15px 0px;
+}
+.registerDiv label{
+    color:red !important;
+    cursor: pointer;
+}
+.loginDiv {
+    width:76px;
+    margin:0 auto !important;
+}
+.bottomDivImg{
+    width:100% !important;
+    background-image:url('/img/Loop_Bottom-Design.png');
+    height:89px;
+}
+.loginBtn{
+    background-color:black !important;
+}
+.loginFormDiv{
+    width:500px;
+    margin:auto !important;
+    border:1px solid rgba(93, 78, 78, 0.22);
+    border-radius: 10px;
+}
+.uname , .pword , .penName{
+    width:50%;
+    margin:0 auto !important;
+    padding-top:30px !important;
+    border-bottom:1px solid #666;
+}
+.horizontalDevider{
+    width:250px;
+    margin-left:auto !important;
+    margin-right:auto !important;
+}
+
+.facebookLogin {
+    color: white;
+    font-size: 19px !important;
+}
+.welcomeText{
+    color:#45C0AD;
+    font-size:50px;
+}
+.textDevHeight {
+    margin-bottom: 50px;
+}
+
+.textThemeColoRed {
+    color: #D61535;
+    font-size:53px;
+}
