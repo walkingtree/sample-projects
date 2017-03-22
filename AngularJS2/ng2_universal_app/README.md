@@ -1,4 +1,4 @@
-# ng2_universal_app
+# ng2_universal_app (Mobile+Web)
 
 Application to share code between web and mobile application.
 
