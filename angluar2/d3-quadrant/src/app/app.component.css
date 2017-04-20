@@ -1,0 +1,20 @@
+body { font-family: Arial;}
+  
+::content >>> .axis, .axis path {
+  fill: none;
+  stroke: #ACB849;
+}
+::content >>> text { 
+  stroke: none;
+  fill: #666666;
+} 
+::content >>> g.tick line{
+    stroke: transparent;
+}
+::content >>> g.tick line.grid-line{
+   stroke: #ACB849;
+}
+ 
+h1{
+  color:palegreen;
+}
