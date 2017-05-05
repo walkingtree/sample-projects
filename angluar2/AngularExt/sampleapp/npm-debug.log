@@ -1,0 +1,29 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'ln' ]
+2 info using npm@3.10.10
+3 info using node@v6.9.4
+4 verbose linkPkg /Users/phani/wtcprojects/angularapps/sampleapp
+5 silly gentlyRm /usr/local/lib/node_modules/sampleapp is being purged
+6 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/sampleapp
+7 verbose stack Error: EACCES: permission denied, symlink '/Users/phani/wtcprojects/angularapps/sampleapp' -> '/usr/local/lib/node_modules/sampleapp'
+7 verbose stack     at Error (native)
+8 verbose cwd /Users/phani/wtcprojects/angularapps/sampleapp
+9 error Darwin 16.3.0
+10 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "ln"
+11 error node v6.9.4
+12 error npm  v3.10.10
+13 error path /Users/phani/wtcprojects/angularapps/sampleapp
+14 error code EACCES
+15 error errno -13
+16 error syscall symlink
+17 error Error: EACCES: permission denied, symlink '/Users/phani/wtcprojects/angularapps/sampleapp' -> '/usr/local/lib/node_modules/sampleapp'
+17 error     at Error (native)
+17 error  { Error: EACCES: permission denied, symlink '/Users/phani/wtcprojects/angularapps/sampleapp' -> '/usr/local/lib/node_modules/sampleapp'
+17 error     at Error (native)
+17 error   errno: -13,
+17 error   code: 'EACCES',
+17 error   syscall: 'symlink',
+17 error   path: '/Users/phani/wtcprojects/angularapps/sampleapp',
+17 error   dest: '/usr/local/lib/node_modules/sampleapp' }
+18 error Please try running this command again as root/Administrator.
+19 verbose exit [ -13, true ]
