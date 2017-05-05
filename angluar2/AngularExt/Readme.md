@@ -1,5 +1,7 @@
 # ExtAng
 
+
+
 This folder is primarily a container for the top-level pieces of the application.
 While you can remove some files and folders that this application does not use,
 be sure to read below before deciding what can be deleted and what needs to be
@@ -31,6 +33,9 @@ process.
    enable the application to load in "development mode".
 
 # Other Folders
+sampleapp folder is the angular2 application.
+
+angularapp folder contains the build files of the sampleapp angular2 application.
 
 ## Basic Application Structure
 
