@@ -10,8 +10,8 @@ import { ContentComponent } from './pages/content/content.component';
 import { EmployeeService } from './service/employee.service';
 import { SearchPipe } from './pipes/search.pipe';
 import { TranslateService } from './service/translate-service';
-import { TRANSLATIONS } from './service/translations';
 import { TRANSLATION_PROVIDERS } from './service/translations';
+import { TRANSLATIONS } from './service/translations';
 import { TranslatePipe } from './pipes/translate.pipe';
 
 
@@ -31,10 +31,10 @@ import { TranslatePipe } from './pipes/translate.pipe';
   ],
   providers: [
     // { provide: LOCALE_ID, useValue: "hi-IN" },
-    { provide: TRANSLATIONS, useValue: 'hi-IN' },
+    //{ provide: TRANSLATIONS, useValue: 'hi-IN' },
     EmployeeService,
-    TranslateService/*,
-    TRANSLATION_PROVIDERS*/
+    TranslateService,
+    TRANSLATION_PROVIDERS
     ],
   bootstrap: [AppComponent]
 })

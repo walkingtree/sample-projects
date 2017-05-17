@@ -11,6 +11,7 @@ export class ContentComponent implements OnInit {
 
   public employees: any = [];
   public search : string = "";
+  public translatedText: string;
 
   constructor(public employeeService: EmployeeService) { }
 
@@ -19,9 +20,8 @@ export class ContentComponent implements OnInit {
 
   }
 
-  getEmployeeData(){
+  getEmployeeData() {
     this.employeeService.getEmployeeData()
             .subscribe(res => this.employees = res.json());
-
   }
 }

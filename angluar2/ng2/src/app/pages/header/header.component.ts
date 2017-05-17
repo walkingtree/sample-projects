@@ -10,36 +10,38 @@ export class HeaderComponent implements OnInit {
 
   
   public supportedLangs: any;
+  public translatedText: string;
   public selectedLang: any;
 
   constructor(public _translate: TranslateService) { 
 
   }
 
-  ngOnInit() {
-      let lang : string = localStorage.getItem('lang');
-      this.selectLang(lang);
+  ngOnInit() { 
+      this.selectLang();
   }
 
   selectedValue(){
     this.selectLang(this.selectedLang);
   }
 
-  selectLang(lang ? : any) {
+  selectLang(lang?: any) {
     if(!lang) {
-      lang = 'en';
+      if(localStorage.getItem('lang'))
+        lang = localStorage.getItem('lang');
+      else 
+        lang = 'en';
     }
 
     localStorage.setItem('lang', lang);
 
-    // set default;
-    if( lang == 'en') {
+    if( lang == 'en'){
           this.supportedLangs = [
             { display: 'English', value: 'en', id: '0' },
             { display: 'Hindi', value: 'hi', id: '1' }
           ];
           this.selectedLang = this.supportedLangs[0].value;
-      } else {
+      }else{
           this.supportedLangs = [
             { display: 'अंग्रेज़ी', value: 'en' },
             { display: 'हिंदी', value: 'hi' }
@@ -48,5 +50,4 @@ export class HeaderComponent implements OnInit {
       }
      this._translate.use(lang);
   }
-
 }

@@ -1,3 +1,4 @@
+import { EmployeeService } from './../service/employee.service';
 import { Pipe, PipeTransform } from '@angular/core';
 import { TranslateService } from '../service/translate-service'; // our translate service
 
