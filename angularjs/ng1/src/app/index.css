@@ -1,0 +1,67 @@
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    color: #662d91;
+}
+
+h4, h5 {
+    font-weight: 300;
+}
+
+body div, body a {
+    transition: all 0.3s ease-out;
+}
+
+.main {
+	
+}
+.primary{
+    background: #F16138;
+}
+    
+.navbar-headercls{
+    width: 100%;
+}
+.header-title{
+    position: absolute;
+    left: 45%;
+}
+
+.logo-imgcls{
+    width: 25%;
+    margin-top: 2%
+}
+
+.navbar-footercls{
+    width: 100%;
+    text-align: center;
+}
+
+
+
+.content {
+	width: 100% !important;
+    margin-top: 50px;
+    padding: 25px;
+    margin-bottom: 50px;
+}
+
+.gridtable {
+    width: 80%;
+}
+
+.language {
+    right: 2%;
+    position: absolute;
+}
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+    color: #000;
+}
+
+.language-text {
+    right: 10%;
+    position: absolute;
+}
+

@@ -1,0 +1,12 @@
+<nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header navbar-headercls">
+                <a class="navbar-left"><img class="logo-imgcls" src="assets/logo.png"></a>
+                <a class="navbar-brand header-title">{{"Angular"| translate}}</a>
+                <a class="navbar-brand header-lable">{{"Change Language"|translate}}</a>
+                <select class="navbar-right header-selector" (change)="selectedValue()" [(ngModel)]="selectedLang">
+                    <option [value]="language.value" *ngFor="let language of supportedLangs">{{language.display}}</option>
+                </select>
+            </div>
+        </div>
+    </nav>

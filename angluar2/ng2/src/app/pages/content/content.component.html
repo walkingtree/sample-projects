@@ -1,0 +1,26 @@
+<div class="content">
+		<div class="container">
+			<h2>{{"Employee" | translate}}</h2>
+				<div class="form-group">
+					<input class="form-control" type="text" placeholder="{{'search by name' | translate}}" [(ngModel)]="search">
+				</div>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>
+								<h4>{{"Name"| translate}}</h4>
+							</th>
+							<th>
+								<h4>{{"Age"| translate}}</h4>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let employee of employees | filter: {Name:search}">
+							<td>{{employee.Name}}</td>
+							<td>{{employee.Age}}</td>
+						</tr>
+					</tbody>
+				</table>
+		</div>
+	</div>

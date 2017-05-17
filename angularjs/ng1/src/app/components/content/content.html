@@ -1,0 +1,40 @@
+<div ng-controller="ContentController">
+	<div class="content">
+		<div class="container">
+
+			<div style="text-align: center;">
+					<h2>{{ 'HEADLINE' | translate }}</h2>
+					<p>{{ 'INTRO_TEXT' | translate }}</p>				
+			</div>
+
+			<h2>{{'EMPLOYEE.TITLE' | translate}}</h2>
+			<form>
+				<div class="form-group">
+					<input class="form-control" type="text" placeholder="{{ 'EMPLOYEE.SEARCH_PLACEHOLDER' | translate }}" ng-model="search">
+				</div>
+			</form>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>
+							<h4>{{'EMPLOYEE.NAME' | translate}}</h4>
+						</th>
+						<th>
+							<h4>{{'EMPLOYEE.AGE' | translate}}</h4>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- <tr ng-repeat="employee in employees | filter: {Name:search}">
+						<td>{{employee.Name | uppercase}}</td>
+						<td>{{employee.Age}}</td>
+					</tr> -->
+					<tr ng-repeat="employee in employees | Search:search">
+						<td>{{employee.Name | uppercase}}</td>
+						<td>{{employee.Age}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
