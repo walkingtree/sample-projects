@@ -7,4 +7,5 @@
 1) Clone it locally.
 2) Run -  npm install
 3) Run - bower install
-4) Run - gulp serve
+4) Run - npm install -g gulp
+5) Run - gulp serve
