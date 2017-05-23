@@ -13,7 +13,8 @@ import { TranslateService } from './service/translate-service';
 import { TRANSLATION_PROVIDERS } from './service/translations';
 import { TRANSLATIONS } from './service/translations';
 import { TranslatePipe } from './pipes/translate.pipe';
-
+import { AppRoutingModule } from './app.routing';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,16 +23,16 @@ import { TranslatePipe } from './pipes/translate.pipe';
     FooterComponent,
     ContentComponent,
     SearchPipe,
-    TranslatePipe
+    TranslatePipe,
+    LoginComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
     HttpModule
   ],
   providers: [
-    // { provide: LOCALE_ID, useValue: "hi-IN" },
-    //{ provide: TRANSLATIONS, useValue: 'hi-IN' },
     EmployeeService,
     TranslateService,
     TRANSLATION_PROVIDERS

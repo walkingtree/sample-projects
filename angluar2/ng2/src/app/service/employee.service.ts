@@ -5,7 +5,7 @@ import { Http } from '@angular/http';
 export class EmployeeService {
 
   constructor(private  http: Http) {
-      this.getEmployeeData();
+      
   }
 
   getEmployeeData() {
