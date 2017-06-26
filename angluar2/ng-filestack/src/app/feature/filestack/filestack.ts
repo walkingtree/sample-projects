@@ -2,7 +2,7 @@ declare var filestack;
 
 import { Subscription } from 'rxjs/Subscription';
 import { Component, HostListener, ElementRef, Renderer, EventEmitter, Output, Input, OnInit, OnDestroy } from '@angular/core';
-import { AppConfigService } from "providers/services/web/app-config.services";
+import { AppConfigService } from "providers/services/app-config.services";
 
 @Component({
     selector: "file-stack",
@@ -40,6 +40,7 @@ export class FileStackComponent implements OnInit, OnDestroy {
         }
 
         let filestackConfig = this.appConfigService.getFilestackConfig().key;
+        let s3Config = this.appConfigService.getS3Config();
         let fileStackClient = filestack.init(filestackConfig, { policy: 'policy', signature: 'signature' });
 
         fileStackClient.pick({
@@ -47,8 +48,7 @@ export class FileStackComponent implements OnInit, OnDestroy {
             maxFiles: parseInt(maxFiles),
             /*fromSources: 'local_file_system',*/
             /*storeTo: {
-                location: 's3',
-                // s3 configuration
+                s3Config
             },*/
             onFileSelected: function(file) {
                 return file;

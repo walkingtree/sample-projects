@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AppLitteralsConfig } from 'providers/litterals/app-litterals';
-import { AppConfigService } from "providers/services/web/app-config.services";
 
 @Component({
   selector: 'app-root',
@@ -13,7 +12,7 @@ export class AppComponent {
 
   public AppLitteralsConfig: any = AppLitteralsConfig;
 
-  constructor(private appConfigService: AppConfigService) {
+  constructor() {
 
   }
 
