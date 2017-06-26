@@ -1,0 +1,18 @@
+<!--The whole content below can be removed with the new code.-->
+<div class="file-stack-dev">
+    <div>
+        <file-stack [data-accept]="AppLitteralsConfig.uploadOthers" data-maxFiles="6" (complete)="onFileStackUploadComplete($event)">
+            <button class="btn-font">
+                <i></i> Upload File Using File Stack
+            </button>
+            <br>
+            <br>
+        </file-stack>
+        <span *ngFor='let file of uploadedFiles; let i = index;'>
+            <a href='{{file.url}}'class="font-red" target="_blank">
+            <i class="fa fa-file"></i>&nbsp; &nbsp;File {{file.originalPath}}
+            </a>
+            <br>
+        </span>
+    </div>
+</div>
