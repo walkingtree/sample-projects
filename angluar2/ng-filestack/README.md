@@ -7,7 +7,7 @@ Step's :
 
 1) Clone it locally.
 2) Run - npm install
-3) Run - ng server
+3) Run - ng serve
 4) Open http://localhost:4200/ to see the output.
 
 
