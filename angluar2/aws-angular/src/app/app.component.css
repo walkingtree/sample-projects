@@ -1,0 +1,49 @@
+
+.white-circle {
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: 0 0 8px #d8dbe3;
+    border-radius: 100px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 100px;
+    text-align: center !important;
+}
+.white-circle:hover {
+    box-shadow: 0 0 8px #007dbc;
+}
+.white-circle img {
+    position: relative;
+    top: 18px;
+}
+.audio-control {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    text-align: center;
+}
+canvas {
+    height: 100px;
+    width: 100%;
+    margin-top: -100px;
+    display: block;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+}
+#message-panel {
+    text-align: center;
+    padding: 10px;
+}
+#bot{
+    width:400px;
+    margin-top:10px;
+    border: 1px solid lightskyblue;
+}
+.result{
+    color: crimson;
+    font-style: bold;
+}

@@ -1,0 +1,10 @@
+<h3> AWS LEX </h3>
+<div> Click the launch button to start the AWS Lex Bot. 
+  <button (click)="showLexBot($event)"> Launch </button>
+</div>
+<p> Final intent response will be displayed here : <span class="result">{{finalIntent}}</span> </p>
+<div [hidden]="!showBot" id="bot" (window:onLexResult)="handleLexResult($event)">
+  <div id="audio-control" class="white-circle"> <div> <img src="assets/images/lex.png"> </div> </div>
+  <div> <canvas class="visualizer"></canvas> </div>
+  <div id="message-panel"> <span id="message"></span> </div>
+</div>

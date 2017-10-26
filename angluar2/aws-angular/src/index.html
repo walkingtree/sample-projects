@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AwsAngular</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <script src="/assets/aws/aws-sdk.min.js"></script>
+
+  <script type="text/javascript">
+  
+    window.lexaudio = {};
+    runLex = false;
+    var timestamp = (window.performance.timing.navigationStart + window.performance.now()).toString();
+    
+    function onLexData(data){
+      if(data && data.dialogState == "ReadyForFulfillment"){
+        runLex = false;
+        lexaudio.example();
+        var lexEvent = document.createEvent("HTMLEvents");
+        lexEvent.initEvent("onLexResult",true,false);
+        lexEvent.partType = data.slots.PartType;
+        document.getElementById("bot").dispatchEvent(lexEvent);
+      }
+    }
+
+  </script>
+
+</head>
+<body>
+  <app-root>Loading...</app-root>
+</body>
+</html>
