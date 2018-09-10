@@ -1,0 +1,45 @@
+<p>
+  order-table works!
+</p>
+ <!--expandableRows="true" -->
+<p-dataTable [value]="orders" expandableRows="true" > 
+    <p-column expander="true" styleClass="col-icon" [style]="{'width':'50px','text-align':'center'}"></p-column>
+    <p-column field="orderId" header="OrderID" [style]="{'width':'90px','text-align':'center'}"></p-column>
+    <p-column field="orddate" header="Order Date"></p-column>
+    <p-column field="supplierName" header="Supplier"></p-column>
+    <!--<p-column field="status" header="Status"></p-column>-->
+    <p-column field="orderToal" header="Order Cost" [style]="{'text-align':'right'}"></p-column>
+    <p-column field="totalLines" header="Order Lines"></p-column>
+    <!--<p-column field="totalLines" header="Order Lines"></p-column>-->
+    <p-column styleClass="col-button" [style]="{'width':'10%','text-align':'center'}" header="Status" field="status">
+       
+        <ng-template let-order="rowData" pTemplate="body">
+            <div [ngSwitch]="order.status">
+            <button *ngSwitchCase="'pending'" type="button" pButton  icon="fa-clock-o">
+            
+            </button>
+            <button *ngSwitchCase="'comfirmed'" type="button" pButton  icon="fa-check">
+            
+            </button>
+            <button *ngSwitchDefault type="button" pButton (click)="onWarning(order)" icon="fa-warning">
+            
+            </button>
+            </div>
+        </ng-template>
+    </p-column>
+
+    <ng-template let-order pTemplate="rowexpansion" >
+      <div>
+        <p-dataTable [value]="order.lines"  [style]="{'margin-left':'40px'}" [editable]="true">
+        <p-column field="orderlineId" header="Line Id" [style]="{ 'width':'70px','text-align':'center'}"></p-column>
+        <p-column field="productName" header="Product" ></p-column>
+        <p-column field="qty" header="Line Qty" [editable]="true"></p-column>        
+        <p-column field="unitPrice" header="Unit price" [style]="{'text-align':'right'}"></p-column>
+        <p-column field="linePrice" header="Line Total" [style]="{'text-align':'right'}"></p-column>
+      </p-dataTable>
+      </div>
+    </ng-template>
+
+</p-dataTable>
+
+
