@@ -76,11 +76,11 @@ In this section, we will setup the needed environment and download the starter p
 ### Starter Project Setup
 The application to be used for this codelab is the `Article Reader` application. 
 
-![Starter Article Reader](https://github.com/walkingtree/sample-projects/Images/Allaboutforms/starterarticlereader.png)
+![Starter Article Reader](https://github.com/walkingtree/sample-projects/blob/master/Images/Allaboutforms/starterarticlereader.png)
 
 Clicking on the **Edit** button shows the Edit Window, which has a Form loaded with the selected record.
 
-![Edit Window](https://github.com/walkingtree/sample-projects/Images/Allaboutforms/editwindow.png)
+![Edit Window](https://github.com/walkingtree/sample-projects/blob/master/Images/Allaboutforms/editwindow.png)
 
 1. For this, download `allaboutgrids` from [here](https://github.com/walkingtree/codelabs/blob/master/sencha/downloads/allaboutgrids.zip?raw=true). Unzip it and place it at `c:/`.
 
@@ -236,7 +236,7 @@ An Ext JS data grid presents all kinds of data in an orderly tabular format and 
 ## UML
 Grids are panels so they can have title, docked items, tools, buttons, etc. Additionally, they also inherit the `store` and `columns:[]` properties from their parent class `Ext.panel.Table`.
 
-![Grids UML](https://github.com/walkingtree/sample-projects/Images/Allaboutforms/GridsUML.png)
+![Grids UML](https://github.com/walkingtree/sample-projects/blob/master/Images/Allaboutforms/GridsUML.png)
 
 ## Column Types
 * **Inbuilt Renderers:** These column types provide default rendering for various data types:
@@ -583,7 +583,7 @@ We want to group the grid data by author name. But the problem is that, as both 
   
 * Save your work and refresh the application. Select the **Grid** tab and expand any group. You should see the following screen.
   
-  ![Grouping Grid](https://github.com/walkingtree/sample-projects/Images/Allaboutforms/grouping.png)
+  ![Grouping Grid](https://github.com/walkingtree/sample-projects/blob/master/Images/Allaboutforms/grouping.png)
   
 * The `hideGroupedHeader:true` property allows to hide the grouped field column from the header menu.
 
