@@ -1,0 +1,27 @@
+body {
+  margin: 5rem;
+  font-family: sans-serif;
+}
+
+div {
+  border: 1px solid #ccc;
+  padding: 1.5rem 3rem;
+}
+
+h2 {
+  margin: 0 0 1rem 0;
+}
+
+li {
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+
+ul {
+  list-style: none;
+}
+
+.highlight {
+  background-color: red;
+  color: white;
+}
