@@ -1,0 +1,88 @@
+#RFID Reader Integration in a Flutter Application
+
+## What is an RFID Reader?
+
+RFID (radio frequency identification) is a form of wireless communication that incorporates the use of electromagnetic or electrostatic coupling in the radio frequency portion of the electromagnetic spectrum to uniquely identify an object, animal or person.
+Chainway R5 is a newly-developed wearable UHF reader. Equipped with an embedded Impinj E710 / R2000, it enables a read distance of over 14m. It allows user information interaction via Bluetooth coordinated with APP or SDK. And it also can be paired with Android/iOS devices to expand RFID capability. This RFID reader can be suitable for warehousing, power inspection, asset management, retail, etc., which provides users with more flexibility to efficiently finish their tasks at hand. It’s work for both android/iOS
+https://www.chainway.net/Products/Info/59
+
+Why are we using RFID Reader?
+We are using it because previously users had to write a manual record of athletes in their book so for this we are integrating the reader with a flutter app so when the certain condition matches it should automatically stop the timer and record the time in our app . There are multiple Reader but we have used BLE(5.0) Reader and tags for testing purposes.
+
+How have I integrated the RFID reader with the flutter app?
+1.Permission needed to integrate the reader
+For Android:-
+Go to android/app/main
+In that open androidManifest.xml file and copy paste these permission
+
+
+These are the  permission for android which is below 12
+<uses-permission android:name="android.permission.BLUETOOTH"/>
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+These are the permission for android 12 and above
+<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+<uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
+<uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/
+
+We have tried many packages to integrate but it didn’t work so we have integrated rfid reader through bridging with native code (kotlin).
+For That we have downloaded the libraries file. 
+1.DeviceAPI_ver20230301_release.aar it named as the device and put in android/app/lib
+2.Write dependency in build.gradle of android/app  
+implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
+3.write native code language you known java/kotlin
+Which you can find folder named as java/kotlin in android/app/src/main
+4.Use methodChannel to bring native code to flutter and if there is a stream then use eventChannel.
+
+Ex:- static const methodChannel = MethodChannel('appliction_name/rfid_reader');
+static const EventChannel eventChannel =    EventChannel('application_name/tag_scanned');
+
+ static Future<bool> findReaders() async {
+     try {   
+    return await methodChannel.invokeMethod('findReaders');  
+         } catch (e) { 
+      rethrow;   
+   } 
+  }
+
+5.AND same method to call flutter code to Native.
+channel = MethodChannel(flutterPluginBinding.binaryMessenger, "application_name/rfid_reader")
+
+We have use flutter blue plus to open open the bluetooth device and check if the bluetooth is open or not of mobile so that it can connect
+
+https://pub.dev/packages/flutter_blue_plus
+
+
+Though you can check that official doc for flutter blue plus for more information.
+
+Remember to call dispose method when your work is complete:
+In which you can call the stopScanning method and disconnect and clear all tags from memory.
+
+There are different power Levels but we have use for the power level 1 and 30.
+1.For power Level 1 you have to put a tag on the reader then it will scan.
+2.For power Level 30 you have to keep reader in 14 m range and it scan all tags
+
+Common Errors:-
+1.When your method  name doesn’t match from native code to flutter 
+object
+E/flutter ( 4225): [ERROR:flutter/runtime/dart_vm_initializer.cc(41)] Unhandled Exception: MissingPluginException(No implementation found for method findReader on channel teamTracker.ai/rfid_reader)
+E/flutter ( 4225): #0      MethodChannel._invokeMethod (package:flutter/src/services/platform_channel.dart:332:7)
+E/flutter ( 4225): <asynchronous suspension>
+E/flutter ( 4225): #1      RfidReader.findReaders (package:ttai_ui/utils/rfid_reader.dart:11:14)
+E/flutter ( 4225): <asynchronous suspension>
+E/flutter ( 4225): #2      new RfidTagsBloc.<anonymous closure> (package:ttai_ui/bloc/rfid_tags/rfid_tags_bloc.dart:125:9)
+E/flutter ( 4225): <asynchronous suspension>
+E/flutter ( 4225): #3      Bloc.on.<anonymous closure>.handleEvent (package:bloc/src/bloc.dart:229:13)
+E/flutter ( 4225): <asynchronous suspension>
+E/flutter ( 4225): 
+
+2.If you miss the call the correct method name in native code onMethodCall than this error will come:
+
+e: file:///D:/project/ttai_ui/android/app/src/main/kotlin/com/example/ttai_ui/RfidReaderPlugin.kt:97:32 Unresolved reference: clearSeenTag
+
+FAILURE: Build failed with an exception.
+
+
+
+
+
