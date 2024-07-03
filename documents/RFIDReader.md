@@ -1,23 +1,44 @@
-#RFID Reader Integration in a Flutter Application
+# RFID Reader Integration in a Flutter Application
 
-## What is an RFID Reader?
+## What is RFID?
+RFID (radio frequency identification) is a form of wireless communication. The RFID system consists of three components: a scanning antenna, a transceiver and a 
+transponder. 
 
-RFID (radio frequency identification) is a form of wireless communication that incorporates the use of electromagnetic or electrostatic coupling in the radio frequency portion of the electromagnetic spectrum to uniquely identify an object, animal or person.
-Chainway R5 is a newly-developed wearable UHF reader. Equipped with an embedded Impinj E710 / R2000, it enables a read distance of over 14m. It allows user information interaction via Bluetooth coordinated with APP or SDK. And it also can be paired with Android/iOS devices to expand RFID capability. This RFID reader can be suitable for warehousing, power inspection, asset management, retail, etc., which provides users with more flexibility to efficiently finish their tasks at hand. It’s work for both android/iOS
-https://www.chainway.net/Products/Info/59
+When the scanning antenna and transceiver are combined, they are referred to as an RFID reader. The RFID reader is a network-connected device that can
+be portable or permanently attached. It uses radio waves to transmit signals that activate the tag. Once activated, the tag sends a wave back to the antenna, where
+it is translated into data.
 
-Why are we using RFID Reader?
-We are using it because previously users had to write a manual record of athletes in their book so for this we are integrating the reader with a flutter app so when the certain condition matches it should automatically stop the timer and record the time in our app . There are multiple Reader but we have used BLE(5.0) Reader and tags for testing purposes.
+The transponder is in the RFID tag itself. 
 
-How have I integrated the RFID reader with the flutter app?
-1.Permission needed to integrate the reader
-For Android:-
-Go to android/app/main
-In that open androidManifest.xml file and copy paste these permission
+## The Chainway R5 Wearable RFID Reader
+* In the TeamTracker.AI application, we used the [Chainway R5 Wearable RFID Reader](https://www.chainway.net/Products/Info/59). 
+
+* Equipped with an embedded Impinj E710 / R2000, it enables a read distance of over 14m. 
+
+* It allows user information interaction via Bluetooth coordinated with an application or SDK. 
+
+* It can be paired with Android/iOS devices both.
+
+* It is suitable for warehousing, power inspection, asset management, retail, etc., which provides users with more flexibility to efficiently finish their tasks 
+at hand. 
 
 
-These are the  permission for android which is below 12
+## Need of RFID Reader in the TeamTracker.AI Application
+The TeamTracker.AI application is a sports application. Its Training Session module has a functionality to record the completion time of an athlete as he finishes 
+a split. The coach clicked the start/stop button manually to either start or stop the split. We automated this functionality by using the RFID Reader. 
+
+## Pre-requisites to use the RFID Reader
+
+#### 1. Permissions
+
+**For Android:** 
+
+* Permissions are added in the android/app/src/main/androidManifest.xml file.
+
+* For Android < 12, application needs the following permissions
+ 
 <uses-permission android:name="android.permission.BLUETOOTH"/>
+
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
 These are the permission for android 12 and above
@@ -25,6 +46,9 @@ These are the permission for android 12 and above
 <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
 <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/
 
+Each athlete is first assigned a tag. During the training session, while running a split, as soon as he comes in the range of an RFID Reader, his tag gets scanned 
+and the start/stop button automatically gets clicked.
+* Primarily, the application is enhanced to use a bluetooth. This is done by using the flutter_blue package.
 We have tried many packages to integrate but it didn’t work so we have integrated rfid reader through bridging with native code (kotlin).
 For That we have downloaded the libraries file. 
 1.DeviceAPI_ver20230301_release.aar it named as the device and put in android/app/lib
