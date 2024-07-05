@@ -29,31 +29,74 @@ a split. The coach clicked the start/stop button manually to either start or sto
 
 ## Pre-requisites to use the RFID Reader
 
-#### 1. Permissions
+#### 1. Add Permissions
 
-**For Android:** 
-
-* Permissions are added in the android/app/src/main/androidManifest.xml file.
-
-* For Android < 12, application needs the following permissions
+**For Android >= 8:** Add the following permissions in android/app/src/main/androidManifest.xml file.
  
-<uses-permission android:name="android.permission.BLUETOOTH"/>
+  * \<uses-permission android:name="android.permission.BLUETOOTH\/\>
 
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+  * \<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"\/\>
 
-These are the permission for android 12 and above
-<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-<uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
-<uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/
+**For Android >= 12:** These are the permission to be added in in android/app/src/main/androidManifest.xml file.
+
+  * \<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"\/\>
+
+  * \<uses-permission android:name="android.permission.BLUETOOTH_SCAN"\/\>
+
+  * \<uses-permission android:name="android.permission.BLUETOOTH_CONNECT"\/\>
+
+#### 2. Handle Permissions
+Add the [permission_handler](https://pub.dev/packages/permission_handler) Flutter package to handle permissions both on the native and frontend side.
+
+#### 3. Switch On the Devive Bluetooh
+Once the permissions are granted, we need to switch on bluetooth on the users's device. We could have done this through native code but we used the [flutter_blue_plus](https://pub.dev/packages/flutter_blue_plus) package. This is crucial.
+
+#### 4. Add the RFID API Library
+We tried different Flutter packages to integrate the RFID Reader but nothing seemed to work with the Chainway R5 Reader. So we integrated this reader in Flutter by writing methods in Kotlin to call the APIs of the library provided by Chainway and then calling these methods in Flutter using the Method Channel. To achieve this, 
+
+ 1. Add this API library **DeviceAPI_ver20230301_release.aar** in the **android/app/lib** folder.
+ 2. Add its dependency in the **android/app/build.gradle** file like **implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])**
+
+## Setup on the Native Side
+1. We can write this code in Kotlin or Java. We wrote in Kotlin in the android/app/src/main/kotlin/com/example/<project name> folder.
+2. Firstly, do some configuration in the MainActivity file like configuring the FlutterEngine, initializing the class which is containing code, e.g. RfidReaderPlugin, etc.
+3. Secondly, write code in the RfidReaderPlugin class to communicate with the Flutter application. This can be done by creating the MethodChannel instance and passing a string as a key. This key will be used to create a bridge between the native code and te Flutter application.
+
+  channel = MethodChannel(flutterPluginBinding.binaryMessenger, "application_name/rfid_reader")
+
+4. Thirdly, configure a method handler for handling method calls from Flutter. 
+
+   channel.setMethodCallHandler(this)
+
+   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
+        when (call.method) {
+            "findReaders" -> findReaders(result)
+            "connect" -> connect(call.argument("address"), result)
+            "disconnect" -> disconnect(result)
+            "getPower" -> getPower(result)
+            "setPower" -> setPower(call.argument("powerLevel"), result)
+            "getBatteryLevel" -> getBatteryLevel(result)
+
+  }}
+  
+
+
+ 
+4. Thirdly, create a Method Channel instance in the Fllutter code also with the same key
+  This 
+6.
+7. to bring native code to flutter and if there is a stream then use eventChannel.
+4.to communicate with the reader like discovering nearby bluetooth devices, connecting with the reader, getting and setting the power level, getting the battery level, start scanning of tags, stop scanning of tags, disposing of resources, etc.
+ 
+  
 
 Each athlete is first assigned a tag. During the training session, while running a split, as soon as he comes in the range of an RFID Reader, his tag gets scanned 
 and the start/stop button automatically gets clicked.
-* Primarily, the application is enhanced to use a bluetooth. This is done by using the flutter_blue package.
-We have tried many packages to integrate but it didn’t work so we have integrated rfid reader through bridging with native code (kotlin).
-For That we have downloaded the libraries file. 
-1.DeviceAPI_ver20230301_release.aar it named as the device and put in android/app/lib
-2.Write dependency in build.gradle of android/app  
-implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
+
+
+
+
+
 3.write native code language you known java/kotlin
 Which you can find folder named as java/kotlin in android/app/src/main
 4.Use methodChannel to bring native code to flutter and if there is a stream then use eventChannel.
@@ -72,9 +115,7 @@ static const EventChannel eventChannel =    EventChannel('application_name/tag_s
 5.AND same method to call flutter code to Native.
 channel = MethodChannel(flutterPluginBinding.binaryMessenger, "application_name/rfid_reader")
 
-We have use flutter blue plus to open open the bluetooth device and check if the bluetooth is open or not of mobile so that it can connect
 
-https://pub.dev/packages/flutter_blue_plus
 
 
 Though you can check that official doc for flutter blue plus for more information.
