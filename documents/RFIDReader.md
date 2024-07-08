@@ -127,7 +127,8 @@ While establishing communication between Flutter and native, you may make two ve
 1. Be sure that the unique identifier passed to the MethodChannel method in Flutter matches with the one used in the native code.
 2. Be sure that the native method that you call from Flutter exists on the native side and its prtotype is same.
 
-
+## Resources
+[Writing custom platform-specific code](https://docs.flutter.dev/platform-integration/platform-channels)
 
 
 
