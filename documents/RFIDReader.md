@@ -121,11 +121,16 @@ MethodChannel allows two way communication between Flutter and native code but i
 
 Therefore, if you want a continous stream of data from native to Flutter, e.g. continuous stream of tags, then use the EventChannel. 
 
-## Common Pitfalls
-While establishing communication between Flutter and native, you may make two very common mistakes.
+## Common Errors
+1. While establishing communication between Flutter and native, you may make two very common mistakes.
 
-1. Be sure that the unique identifier passed to the MethodChannel method in Flutter matches with the one used in the native code.
-2. Be sure that the native method that you call from Flutter exists on the native side and its prtotype is same.
+2. Be sure that the unique identifier passed to MethodChannel in Flutter matches with the one used in the native code.
+
+3. Be sure that the native method that you call from Flutter exists on the native side and its prtotype is also same.
+
+4. On Flutter side, be sure that the reader is connected before you attempt to perform operations like getting the battery level, getting the power level, scanning of tags, etc.
+
+5. Ensure that the scanning is stopped before you try to reconnect with the reader, get the battery level, set the power level, etc. 
 
 ## Resources
 [Writing custom platform-specific code](https://docs.flutter.dev/platform-integration/platform-channels)
