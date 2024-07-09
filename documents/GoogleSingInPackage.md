@@ -2,7 +2,7 @@
 
 1.First go to GCP(google cloud platform) https://console.cloud.google.com/ and create the account.
 
-2.Than go to "Project" dropdown click on it to make your project by selecting a new project .
+2.Then go to "Project" dropdown click on it to make your project by selecting a new project .
 
 3.After making your project select your project from dropdown if it is not selected. 
 
