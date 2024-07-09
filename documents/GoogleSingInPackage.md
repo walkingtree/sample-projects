@@ -1,16 +1,16 @@
 # Steps To implement Google Sign In.
 
-1.First go to GCP(google cloud platform) https://console.cloud.google.com/ and create the account.
+1. First go to GCP(google cloud platform) https://console.cloud.google.com/ and create the account.
 
-2.Then go to "Project" dropdown click on it to make your project by selecting a new project .
+2. Then go to "Project" dropdown click on it to make your project by selecting a new project .
 
-3.After making your project select your project from dropdown if it is not selected. 
+3. After making your project select your project from dropdown if it is not selected. 
 
-4.After searching OAuth consent screen and do your setup according to your need.
+4. After searching OAuth consent screen and do your setup according to your need.
 
-5.When setup OAuth consent screen is setup you should go to your project and install a package
+5. When setup OAuth consent screen is setup you should go to your project and install a package
 
-6.Google Sign in Package you can find from here https://pub.dev/packages/google_sign_in.
+6. Google Sign in Package you can find from here https://pub.dev/packages/google_sign_in.
 
 7. Make your own method or copy paste below method in dart file to call googleApi.
 
@@ -22,7 +22,7 @@
     }
     ```
 
-8.call this method in google sign in button which you made in project with 
+8. Call this method in google sign in button which you made in project with 
 
     ```
     future<void> googleSignIn() async {
@@ -43,9 +43,9 @@
                         },
     ```
 
-9.Now rerun your project and click your google sign in button it will give you error with ```platformException(sign in failed,com.android.gms.common.apiexception 12500 )```
+9. Now rerun your project and click your google sign in button it will give you error with ```platformException(sign in failed,com.android.gms.common.apiexception 12500 )```
 
-10.So for that you have to wait and first check that java path is set on env because we are going to use one keytool cmd
+10. So for that you have to wait and first check that java path is set on env because we are going to use one keytool cmd
 
 11. If not install java jdk in your system if it is, install the skip.
 
@@ -56,11 +56,11 @@
     path:-C:\Program Files\Java\jdk-21
     ```
 
-13.click okay and edit path of system variable %JAVA_HOME%\bin and click okay okay okay
+13. Click okay and edit path of system variable %JAVA_HOME%\bin and click okay okay okay
 
-14.Now your environment variable is set 
+14. Now your environment variable is set 
 
-15.Now run this cmd keytool -genkey -v -keystore C:\Users\your_username\myKey.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias androiddebugkey
+15. Now run this cmd keytool -genkey -v -keystore C:\Users\your_username\myKey.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias androiddebugkey
 create your own password.
 
 When whole setup is done you will get this one file C:\Users\your_username with this name mykey.jks just copy paste in yourproject\android\app
@@ -86,9 +86,9 @@ When whole setup is done you will get this one file C:\Users\your_username with 
     
   which tells you get ssh-1 set on your api credential on GCP
 
-19.Now you should open GCP and search for credential and click create new credential
+19. Now you should open GCP and search for credential and click create new credential
 
-20.Select platform for which you want to setup and create after go build.gradle of android\app find application id take string value copy paste in package name.
+20. Select platform for which you want to setup and create after go build.gradle of android\app find application id take string value copy paste in package name.
 
 21. Check the path it should be yourproject\android and then run this cmd:-
     
@@ -112,9 +112,9 @@ If your using android studio click on main.dart on top drop down and select edit
     1.--web-port=5000 copy this in addition run args:
 
 # Configuration for the iOS.
-1.Go to GCP and search credential and create credential for iOS and copy client id 
+1. Go to GCP and search credential and create credential for iOS and copy client id 
 
-2.copy this 
+2. Copy this 
 
 ```
 <!-- Put me in the [my_project]/ios/Runner/Info.plist file -->
