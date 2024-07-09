@@ -152,7 +152,7 @@ In above code, it has used get method for reading purpose and in this there is s
 Here is the code for implementation for the post method in flutter by dio package.
 
 
-
+```
 Future<void> postData() async { 
 
   try { 
@@ -187,7 +187,7 @@ Future<void> postData() async { 
 
 }
 
-
+```
 
 In this we use data property to send the data which we want to send.In post method there is 1 extra method from get method which is onSendProgress.
 
