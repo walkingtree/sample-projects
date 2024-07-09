@@ -152,7 +152,7 @@ In above code, it has used get method for reading purpose and in this there is s
 Here is the code for implementation for the post method in flutter by dio package.
 
 
-
+```
 Future<void> postData() async { 
 
   try { 
@@ -186,16 +186,13 @@ Future<void> postData() async { 
  }
 
 }
-
+```
 
 
 In this we use data property to send the data which we want to send.In post method there is 1 extra method from get method which is onSendProgress.
-
-
-
 The onSendProgress callback is useful for tasks such as displaying an upload progress bar to the user, allowing them to track the progress of data being sent to the server.
 
-
+```
 
 Response response = await dio.post( 'https://api.example.com/postEndpoint',
 
@@ -217,12 +214,12 @@ Response response = await dio.post( 'https://api.example.com/postEndpoint',
 
  );
 
-
+```
 
 Here is the proper example for the post method, so you can take it as a reference:-
 
 
-
+```
  Future<void> postData() async {  
 
    // create a dio instance
@@ -284,19 +281,17 @@ Here is the proper example for the post method, so you can take it as a referenc
      }
 
    }
+```
 
 
 
 
-
-For using post and get concurrently:-
-
-
+#### For using post and get concurrently:-
 
 You can just call the below function in the button and check the console for status, For Get it shows 200 and for Post it shows 201.
 
 
-
+```
  Future<void> getPostData()async{  
 
  var dio = Dio(); 
@@ -322,10 +317,10 @@ You can just call the below function in the button and check the console for sta
    print('Error: $error');
 
    } }
+```
 
 
-
-WorkFlow of Future.wait:-
+#### WorkFlow of Future.wait:-
 
 1.Waits for multiple futures to complete and collects their results.
 
@@ -333,12 +328,12 @@ WorkFlow of Future.wait:-
 
 
 
-PUT Method 
+### PUT Method 
 
 Put method is used to send a request to the specified URL you want to update.
 
 
-
+```
 Future<void> updateData() async {
 
   try {
@@ -372,10 +367,10 @@ Future<void> updateData() async {
   }
 
 }
+```
 
 
-
-In this example:
+##### In this example:
 
 We define an asynchronous function updateData to make the PUT request. We use the await keyword to wait for the response from the server.
 
@@ -387,7 +382,7 @@ Ensure you handle the response and any errors that might occur during the reques
 
 
 
-Patch Method
+### Patch Method
 
 
 
@@ -395,11 +390,10 @@ The HTTP PATCH method is used to apply partial modifications to a resource. It's
 
 
 
-Example:-
+##### Example:-
 
+```
 import 'package:dio/dio.dart';
-
-
 
 void updateUserProfile(String userId, Map<String, dynamic> updatedData) async {
 
@@ -424,14 +418,14 @@ void updateUserProfile(String userId, Map<String, dynamic> updatedData) async {
   }
 
 }
+```
+
+
+### Difference between Put and Patch
 
 
 
-Difference between Put and Patch
-
-
-
-PUT METHOD:
+#### PUT METHOD:
 
 Purpose: The HTTP PUT method is used to update or replace an existing resource or create a new resource if it doesn't already exist at the specified URL.
 
@@ -441,7 +435,7 @@ Resource Update: When using PUT, you typically send the complete representation 
 
 
 
-PATCH METHOD:
+#### PATCH METHOD:
 
 Purpose: The HTTP PATCH method is used to apply partial modifications to an existing resource. It's intended to update specific attributes or properties of a resource without replacing the entire resource.
 
@@ -449,14 +443,14 @@ Not Necessarily Idempotent: PATCH requests are not necessarily idempotent, meani
 
 Partial Update: When using PATCH, you send only the data that needs to be updated. It's a way to modify specific fields or properties without affecting the rest of the resource.
 
-DELETE METHOD:
+### DELETE METHOD:
 
 It is used to send an HTTP DELETE request to a specified URL, typically used to request the removal of a resource on the server.
 
-Ex:-
+#### Ex:-
 
 
-
+```
 try {
 
   Response response = await dio.delete('https://api.example.com/resource/$resourceId');
@@ -476,10 +470,10 @@ try {
   print('Error making DELETE request: $e');
 
 }
+```
 
 
-
-DOWNLOAD METHOD:
+### DOWNLOAD METHOD:
 
 To download a file using Dio, you typically make a GET request and handle the file download manually. Here's a general approach to download a file using Dio:
 
@@ -488,7 +482,7 @@ To download a file using Dio, you typically make a GET request and handle the fi
 For this you need to install another additional package of path_provider from pub.dev.
 
 
-
+```
  Future<void> downloadData(String urlPath,)async{  
 
    Dio dio = Dio();  
@@ -501,26 +495,27 @@ For this you need to install another additional package of path_provider from pu
 
   }
 
+```
 
-
-UPLOAD METHOD:
+### UPLOAD METHOD:
 
 
 
 In dio there is no upload method but we can create a upload method by post method and when you sending your data in data properties by creating a object ,In key-value pair in value you can use:-
 
 
-
+```
 await MultipartFile.fromFile(filePath, filename: 'upload.txt'.
+```
 
 You can use the above method to define the send path type format and the format in which you can send to the server.
 
 
 
-Here is the Example:-
+#### Here is the Example:-
 
 
-
+```
 import 'package:dio/dio.dart';
 
 
@@ -590,11 +585,11 @@ class FileUploadService {
   }
 
 }
-
+```
 //And function to implement
 
 
-
+```
 void main() async {
 
   final fileUploadService = FileUploadService();
@@ -608,15 +603,15 @@ void main() async {
   await fileUploadService.uploadFile(apiUrl, filePath);
 
 }
-
-Error handling:-
+```
+## Error handling:-
 
 In dio on error handler and its type is deprecated so instead of that you can use exception handler and its type.
 
 We generally use exception handling to handle network error in various types. You can make a common error handler file method in which you can handle the error.
 
 
-
+```
 class ExceptionHandler { 
 
    bool dioExceptionHandler(DioException error, dynamic stackTrace) {   
@@ -660,5 +655,5 @@ class ExceptionHandler { 
    }
 
  }
-
+```
 To find out more method of DioException method u can go through this github link:-
